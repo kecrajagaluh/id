@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Layanan KTP, KK, dan Akta Kecamatan Rajagaluh - Pelayanan dokumen kependudukan">
+    <title>KTP, KK, Akta - Kecamatan Rajagaluh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="logo.svg" alt="Logo Kecamatan Rajagaluh" class="logo">
+                <div class="brand-text">
+                    <h1>Kecamatan Rajagaluh</h1>
+                    <p>Kabupaten Majalengka</p>
+                </div>
+            </div>
+            
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Beranda</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Profil <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sejarah.html">Sejarah</a></li>
+                            <li><a href="visi-misi.html">Visi & Misi</a></li>
+                            <li><a href="struktur-organisasi.html">Struktur Organisasi</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active">
+                            Layanan Publik <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="administrasi.html">Pelayanan Administrasi</a></li>
+                            <li><a href="surat-domisili.html">Surat Keterangan Domisili</a></li>
+                            <li><a href="ktp-kk-akta.html">KTP, KK, Akta</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Informasi Publik <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="berita.html">Berita & Pengumuman</a></li>
+                            <li><a href="agenda.html">Agenda Kegiatan</a></li>
+                            <li><a href="laporan.html">Laporan Tahunan</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="ai-assistant.html" class="nav-link">AI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pkl.html" class="nav-link">PKL</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tentang.html" class="nav-link">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="kontak.html" class="nav-link">Kontak</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">KTP, KK, dan Akta</h1>
+            <p class="page-subtitle">Layanan Dokumen Kependudukan dan Pencatatan Sipil</p>
+        </div>
+    </section>
+
+    <!-- Page Content -->
+    <section class="page-content">
+        <div class="container">
+            <!-- Info Umum -->
+            <div class="content-section">
+                <h2><i class="fas fa-info-circle"></i> Informasi Umum</h2>
+                
+                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow-light); margin: 2rem 0;">
+                    <div style="background: rgba(30, 58, 138, 0.1); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem;"><i class="fas fa-exclamation-triangle"></i> Penting!</h3>
+                        <p style="margin: 0; line-height: 1.8;">
+                            Kecamatan Rajagaluh melayani <strong>pengantar</strong> untuk pembuatan KTP, KK, dan Akta. Proses cetak/pembuatan fisik dokumen dilakukan di <strong>Dinas Kependudukan dan Pencatatan Sipil Kabupaten Majalengka</strong>. Kami membantu mempersiapkan berkas dan memberikan surat pengantar untuk mempermudah proses di tingkat kabupaten.
+                        </p>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                        <div style="text-align: center; padding: 1rem; background: var(--light-gray); border-radius: 8px;">
+                            <i class="fas fa-clock" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 0.5rem;"></i>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Waktu Layanan</h4>
+                            <p style="margin: 0; font-size: 0.9rem;">Senin - Jumat<br>08.00 - 15.00 WIB</p>
+                        </div>
+                        
+                        <div style="text-align: center; padding: 1rem; background: var(--light-gray); border-radius: 8px;">
+                            <i class="fas fa-money-bill" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 0.5rem;"></i>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Biaya</h4>
+                            <p style="margin: 0; font-size: 0.9rem;">Surat pengantar GRATIS<br>Biaya cetak di Disdukcapil</p>
+                        </div>
+                        
+                        <div style="text-align: center; padding: 1rem; background: var(--light-gray); border-radius: 8px;">
+                            <i class="fas fa-file-alt" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 0.5rem;"></i>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Proses</h4>
+                            <p style="margin: 0; font-size: 0.9rem;">Pengantar 1-2 hari<br>Cetak 7-14 hari</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Layanan KTP -->
+            <div class="content-section">
+                <h2><i class="fas fa-id-card"></i> Layanan Kartu Tanda Penduduk (KTP)</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 2rem 0;">
+                    <!-- KTP Baru -->
+                    <div class="service-card">
+                        <div class="service-icon" style="background: linear-gradient(135deg, #10b981, #059669);">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <h3>KTP Baru (Usia 17 Tahun)</h3>
+                        <p>Untuk pembuatan KTP pertama kali bagi warga yang berusia 17 tahun</p>
+                        
+                        <div style="text-align: left; margin: 1rem 0;">
+                            <h4 style="color: var(--primary-color); font-size: 1rem; margin-bottom: 0.5rem;">Persyaratan:</h4>
+                            <ul style="font-size: 0.9rem; line-height: 1.6;">
+                                <li>Surat pengantar dari RT/RW</li>
+                                <li>Fotokopi Kartu Keluarga</li>
+                                <li>Fotokopi akta kelahiran</li>
+                                <li>Pas foto 4x6 (2 lembar)</li>
+                                <li>Surat keterangan sekolah (jika masih sekolah)</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: rgba(16, 185, 129, 0.1); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                            <p style="margin: 0; font-size: 0.9rem; color: #059669; font-weight: 600;">
+                                <i class="fas fa-info-circle"></i> Wajib bagi warga usia 17 tahun
+                            </p>
+                        </div>
+                        
+                        <button onclick="openServiceModal('ktp')" class="btn btn-primary">Ajukan Pengantar</button>
+                    </div>
+
+                    <!-- Perpanjangan KTP -->
+                    <div class="service-card">
+                        <div class="service-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+                            <i class="fas fa-redo"></i>
+                        </div>
+                        <h3>Perpanjangan KTP</h3>
+                        <p>Untuk perpanjangan KTP yang sudah habis masa berlakunya</p>
+                        
+                        <div style="text-align: left; margin: 1rem 0;">
+                            <h4 style="color: var(--primary-color); font-size: 1rem; margin-bottom: 0.5rem;">Persyaratan:</h4>
+                            <ul style="font-size: 0.9rem; line-height: 1.6;">
+                                <li>KTP lama (asli dan fotokopi)</li>
+                                <li>Fotokopi Kartu Keluarga</li>
+                                <li>Pas foto 4x6 (2 lembar)</li>
+                                <li>Surat pengantar dari RT/RW</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: rgba(245, 158, 11, 0.1); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                            <p style="margin: 0; font-size: 0.9rem; color: #d97706; font-weight: 600;">
+                                <i class="fas fa-clock"></i> Perpanjang sebelum expired
+                            </p>
+                        </div>
+                        
+                        <button onclick="openServiceModal('ktp')" class="btn btn-primary">Ajukan Pengantar</button>
+                    </div>
+
+                    <!-- Penggantian KTP -->
+                    <div class="service-card">
+                        <div class="service-icon" style="background: linear-gradient(135deg, #ef4444, #dc2626);">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <h3>Penggantian KTP</h3>
+                        <p>Untuk penggantian KTP yang hilang, rusak, atau perubahan data</p>
+                        
+                        <div style="text-align: left; margin: 1rem 0;">
+                            <h4 style="color: var(--primary-color); font-size: 1rem; margin-bottom: 0.5rem;">Persyaratan:</h4>
+                            <ul style="font-size: 0.9rem; line-height: 1.6;">
+                                <li>Surat kehilangan dari Polsek (jika hilang)</li>
+                                <li>KTP lama (jika rusak/perubahan data)</li>
+                                <li>Fotokopi Kartu Keluarga</li>
+                                <li>Pas foto 4x6 (2 lembar)</li>
+                                <li>Surat pengantar dari RT/RW</li>
+                                <li>Dokumen pendukung perubahan data</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: rgba(239, 68, 68, 0.1); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                            <p style="margin: 0; font-size: 0.9rem; color: #dc2626; font-weight: 600;">
+                                <i class="fas fa-shield-alt"></i> Sertakan surat kehilangan jika hilang
+                            </p>
+                        </div>
+                        
+                        <button onclick="openServiceModal('ktp')" class="btn btn-primary">Ajukan Pengantar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Layanan KK -->
+            <div class="content-section">
+                <h2><i class="fas fa-users"></i> Layanan Kartu Keluarga (KK)</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 2rem 0;">
+                    <!-- KK Baru -->
+                    <div class="service-card">
+                        <div class="service-icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                        <h3>KK Baru</h3>
+                        <p>Untuk keluarga baru atau pisah KK dari orang tua</p>
+                        
+                        <div style="text-align: left; margin: 1rem 0;">
+                            <h4 style="color: var(--primary-color); font-size: 1rem; margin-bottom: 0.5rem;">Persyaratan:</h4>
+                            <ul style="font-size: 0.9rem; line-height: 1.6;">
+                                <li>Surat pengantar dari RT/RW</li>
+                                <li>Surat nikah/cerai (jika ada)</li>
+                                <li>KK lama (untuk pisah KK)</li>
+                                <li>KTP semua anggota keluarga</li>
+                                <li>Akta kelahiran anak-anak</li>
+                                <li>Surat keterangan pindah (jika dari luar daerah)</li>
+                            </ul>
+                        </div>
+                        
+                        <button onclick="openServiceModal('kk')" class="btn btn-primary">Ajukan Pengantar</button>
+                    </div>
+
+                    <!-- Perubahan KK -->
+                    <div class="service-card">
+                        <div class="service-icon" style="background: linear-gradient(135deg, #06b6d4, #0891b2);">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <h3>Perubahan Data KK</h3>
+                        <p>Untuk perubahan data anggota keluarga atau penambahan anggota</p>
+                        
+                        <div style="text-align: left; margin: 1rem 0;">
+                            <h4 style="color: var(--primary-color); font-size: 1rem; margin-bottom: 0.5rem;">Persyaratan:</h4>
+                            <ul style="font-size: 0.9rem; line-height: 1.6;">
+                                <li>KK asli yang akan diubah</li>
+                                <li>KTP kepala keluarga</li>
+                                <li>Dokumen pendukung perubahan</li>
+                                <li>Akta kelahiran (untuk penambahan anak)</li>
+                                <li>Surat nikah (untuk penambahan istri/suami)</li>
+                                <li>Surat pengantar dari RT/RW</li>
+                            </ul>
+                        </div>
+                        
+                        <button onclick="openServiceModal('kk')" class="btn btn-primary">Ajukan Pengantar</button>
+                    </div>
+
+                    <!-- Penggantian KK -->
+                    <div class="service-card">
+                        <div class="service-icon" style="background: linear-gradient(135deg, #f97316, #ea580c);">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3>Penggantian KK</h3>
+                        <p>Untuk KK yang hilang atau rusak</p>
+                        
+                        <div style="text-align: left; margin: 1rem 0;">
+                            <h4 style="color: var(--primary-color); font-size: 1rem; margin-bottom: 0.5rem;">Persyaratan:</h4>
+                            <ul style="font-size: 0.9rem; line-height: 1.6;">
+                                <li>Surat kehilangan dari Polsek (jika hilang)</li>
+                                <li>KK lama (jika rusak)</li>
+                                <li>KTP kepala keluarga</li>
+                                <li>KTP semua anggota keluarga</li>
+                                <li>Surat pengantar dari RT/RW</li>
+                            </ul>
+                        </div>
+                        
+                        <button onclick="openServiceModal('kk')" class="btn btn-primary">Ajukan Pengantar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Layanan Akta -->
+            <div class="content-section">
+                <h2><i class="fas fa-certificate"></i> Layanan Akta Pencatatan Sipil</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 2rem 0;">
+                    <!-- Akta Kelahiran -->
+                    <div class="service-card">
+                        <div class="service-icon" style="background: linear-gradient(135deg, #ec4899, #db2777);">
+                            <i class="fas fa-baby"></i>
+                        </div>
+                        <h3>Akta Kelahiran</h3>
+                        <p>Pencatatan kelahiran untuk bayi baru lahir atau terlambat</p>
+                        
+                        <div style="text-align: left; margin: 1rem 0;">
+                            <h4 style="color: var(--primary-color); font-size: 1rem; margin-bottom: 0.5rem;">Persyaratan:</h4>
+                            <ul style="font-size: 0.9rem; line-height: 1.6;">
+                                <li>Surat keterangan lahir dari dokter/bidan</li>
+                                <li>KTP dan KK orang tua</li>
+                                <li>Surat nikah orang tua</li>
+                                <li>Surat pengantar dari RT/RW</li>
+                                <li>2 orang saksi (KTP dan KK)</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: rgba(236, 72, 153, 0.1); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                            <p style="margin: 0; font-size: 0.9rem; color: #db2777; font-weight: 600;">
+                                <i class="fas fa-clock"></i> Daftar maksimal 60 hari setelah lahir
+                            </p>
+                        </div>
+                        
+                        <button onclick="openServiceModal('akta')" class="btn btn-primary">Ajukan Pengantar</button>
+                    </div>
+
+                    <!-- Akta Kematian -->
+                    <div class="service-card">
+                        <div class="service-icon" style="background: linear-gradient(135deg, #64748b, #475569);">
+                            <i class="fas fa-cross"></i>
+                        </div>
+                        <h3>Akta Kematian</h3>
+                        <p>Pencatatan kematian untuk keluarga yang meninggal</p>
+                        
+                        <div style="text-align: left; margin: 1rem 0;">
+                            <h4 style="color: var(--primary-color); font-size: 1rem; margin-bottom: 0.5rem;">Persyaratan:</h4>
+                            <ul style="font-size: 0.9rem; line-height: 1.6;">
+                                <li>Surat keterangan kematian dari dokter</li>
+                                <li>KTP dan KK almarhum</li>
+                                <li>KTP pelapor</li>
+                                <li>Surat pengantar dari RT/RW</li>
+                                <li>2 orang saksi (KTP dan KK)</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: rgba(100, 116, 139, 0.1); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                            <p style="margin: 0; font-size: 0.9rem; color: #475569; font-weight: 600;">
+                                <i class="fas fa-calendar"></i> Daftar maksimal 30 hari
+                            </p>
+                        </div>
+                        
+                        <button onclick="openServiceModal('akta')" class="btn btn-primary">Ajukan Pengantar</button>
+                    </div>
+
+                    <!-- Akta Perceraian -->
+                    <div class="service-card">
+                        <div class="service-icon" style="background: linear-gradient(135deg, #059669, #047857);">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h3>Pencatatan Perceraian</h3>
+                        <p>Pencatatan perceraian berdasarkan putusan pengadilan</p>
+                        
+                        <div style="text-align: left; margin: 1rem 0;">
+                            <h4 style="color: var(--primary-color); font-size: 1rem; margin-bottom: 0.5rem;">Persyaratan:</h4>
+                            <ul style="font-size: 0.9rem; line-height: 1.6;">
+                                <li>Putusan pengadilan yang berkekuatan hukum tetap</li>
+                                <li>KTP dan KK kedua belah pihak</li>
+                                <li>Akta nikah asli</li>
+                                <li>Surat pengantar dari RT/RW</li>
+                                <li>2 orang saksi (KTP dan KK)</li>
+                            </ul>
+                        </div>
+                        
+                        <button onclick="openServiceModal('akta')" class="btn btn-primary">Ajukan Pengantar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Pengajuan -->
+            <div class="content-section">
+                <h2><i class="fas fa-edit"></i> Form Pengajuan Pengantar</h2>
+                
+                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow-light); margin: 2rem 0;">
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Pilih Jenis Layanan</h3>
+                        <p>Silakan pilih jenis layanan yang Anda butuhkan untuk mendapatkan surat pengantar</p>
+                    </div>
+                    
+                    <form id="pengantar-form" style="max-width: 700px; margin: 0 auto;">
+                        <div class="form-group">
+                            <label class="form-label">Jenis Layanan *</label>
+                            <select class="form-select" name="jenis_layanan" required onchange="showRequirements(this.value)">
+                                <option value="">Pilih Jenis Layanan</option>
+                                <optgroup label="KTP">
+                                    <option value="ktp_baru">KTP Baru (Usia 17 Tahun)</option>
+                                    <option value="ktp_perpanjangan">Perpanjangan KTP</option>
+                                    <option value="ktp_penggantian">Penggantian KTP</option>
+                                </optgroup>
+                                <optgroup label="Kartu Keluarga">
+                                    <option value="kk_baru">KK Baru</option>
+                                    <option value="kk_perubahan">Perubahan Data KK</option>
+                                    <option value="kk_penggantian">Penggantian KK</option>
+                                </optgroup>
+                                <optgroup label="Akta">
+                                    <option value="akta_kelahiran">Akta Kelahiran</option>
+                                    <option value="akta_kematian">Akta Kematian</option>
+                                    <option value="akta_perceraian">Pencatatan Perceraian</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div class="form-group">
+                                <label class="form-label">Nama Lengkap *</label>
+                                <input type="text" class="form-input" name="nama_lengkap" placeholder="Nama sesuai dokumen" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">NIK *</label>
+                                <input type="text" class="form-input" name="nik" placeholder="16 digit NIK" required maxlength="16">
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div class="form-group">
+                                <label class="form-label">Tempat Lahir *</label>
+                                <input type="text" class="form-input" name="tempat_lahir" placeholder="Kota/Kabupaten lahir" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Tanggal Lahir *</label>
+                                <input type="date" class="form-input" name="tanggal_lahir" required>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div class="form-group">
+                                <label class="form-label">Jenis Kelamin *</label>
+                                <select class="form-select" name="jenis_kelamin" required>
+                                    <option value="">Pilih</option>
+                                    <option value="L">Laki-laki</option>
+                                    <option value="P">Perempuan</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Agama *</label>
+                                <select class="form-select" name="agama" required>
+                                    <option value="">Pilih Agama</option>
+                                    <option value="Islam">Islam</option>
+                                    <option value="Kristen">Kristen</option>
+                                    <option value="Katolik">Katolik</option>
+                                    <option value="Hindu">Hindu</option>
+                                    <option value="Buddha">Buddha</option>
+                                    <option value="Khonghucu">Khonghucu</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Alamat Lengkap *</label>
+                            <textarea class="form-textarea" name="alamat" placeholder="Alamat lengkap sesuai domisili" required></textarea>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div class="form-group">
+                                <label class="form-label">Nomor Telepon *</label>
+                                <input type="tel" class="form-input" name="telepon" placeholder="08123456789" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Pekerjaan</label>
+                                <input type="text" class="form-input" name="pekerjaan" placeholder="Pekerjaan saat ini">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Keterangan Tambahan</label>
+                            <textarea class="form-textarea" name="keterangan" placeholder="Informasi tambahan atau alasan khusus"></textarea>
+                        </div>
+
+                        <!-- Requirements Display -->
+                        <div id="requirements-display" style="display: none; background: var(--light-gray); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                            <h4 style="color: var(--primary-color); margin-bottom: 1rem;"><i class="fas fa-clipboard-list"></i> Dokumen yang Perlu Disiapkan</h4>
+                            <div id="requirements-content"></div>
+                        </div>
+
+                        <div style="background: rgba(245, 158, 11, 0.1); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0;">
+                            <h4 style="color: var(--accent-color); margin-bottom: 1rem;"><i class="fas fa-info-circle"></i> Informasi Penting</h4>
+                            <ul style="margin: 0; line-height: 1.8; color: var(--text-dark);">
+                                <li>Surat pengantar dari kecamatan <strong>GRATIS</strong></li>
+                                <li>Bawa dokumen asli saat pengambilan surat pengantar</li>
+                                <li>Proses cetak/pembuatan dokumen dilakukan di <strong>Disdukcapil Kabupaten</strong></li>
+                                <li>Pastikan semua data yang diisi sudah benar dan sesuai dokumen</li>
+                            </ul>
+                        </div>
+
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <button type="submit" class="btn btn-primary" style="padding: 15px 40px; font-size: 1.1rem;">
+                                <i class="fas fa-paper-plane"></i> Kirim Pengajuan
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Alur Proses -->
+            <div class="content-section">
+                <h2><i class="fas fa-route"></i> Alur Proses Lengkap</h2>
+                
+                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow-light); margin: 2rem 0;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                        <div style="text-align: center; padding: 1rem;">
+                            <div style="width: 60px; height: 60px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem; font-weight: bold;">1</div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Pengajuan di Kecamatan</h4>
+                            <p style="font-size: 0.9rem;">Ajukan surat pengantar dengan dokumen lengkap</p>
+                        </div>
+
+                        <div style="text-align: center; padding: 1rem;">
+                            <div style="width: 60px; height: 60px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem; font-weight: bold;">2</div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Verifikasi Berkas</h4>
+                            <p style="font-size: 0.9rem;">Petugas memverifikasi kelengkapan dokumen</p>
+                        </div>
+
+                        <div style="text-align: center; padding: 1rem;">
+                            <div style="width: 60px; height: 60px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem; font-weight: bold;">3</div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Surat Pengantar</h4>
+                            <p style="font-size: 0.9rem;">Terima surat pengantar dari kecamatan</p>
+                        </div>
+
+                        <div style="text-align: center; padding: 1rem;">
+                            <div style="width: 60px; height: 60px; background: var(--accent-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem; font-weight: bold;">4</div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Ke Disdukcapil</h4>
+                            <p style="font-size: 0.9rem;">Bawa surat pengantar ke Disdukcapil Kabupaten</p>
+                        </div>
+
+                        <div style="text-align: center; padding: 1rem;">
+                            <div style="width: 60px; height: 60px; background: var(--secondary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: var(--text-dark); font-size: 1.5rem; font-weight: bold;">5</div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Cetak Dokumen</h4>
+                            <p style="font-size: 0.9rem;">Dokumen selesai dicetak dan siap diambil</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kontak -->
+            <div class="content-section">
+                <h2><i class="fas fa-headset"></i> Bantuan dan Informasi</h2>
+                
+                <div style="background: var(--primary-color); color: white; padding: 2rem; border-radius: 12px; text-align: center; margin: 2rem 0;">
+                    <h3 style="color: var(--secondary-color); margin-bottom: 1rem;">Butuh Bantuan?</h3>
+                    <p style="margin-bottom: 2rem; opacity: 0.9;">
+                        Tim pelayanan dokumen kependudukan siap membantu Anda
+                    </p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                        <div>
+                            <i class="fas fa-phone" style="font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                            <p style="margin: 0; font-weight: 600;">(0233) 123-4567</p>
+                            <p style="margin: 0; font-size: 0.9rem; opacity: 0.8;">Senin - Jumat: 08.00 - 15.00 WIB</p>
+                        </div>
+                        
+                        <div>
+                            <i class="fas fa-envelope" style="font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                            <p style="margin: 0; font-weight: 600;">dukcapil@rajagaluh.majalengkakab.go.id</p>
+                            <p style="margin: 0; font-size: 0.9rem; opacity: 0.8;">Respon maksimal 1x24 jam</p>
+                        </div>
+                        
+                        <div>
+                            <i class="fas fa-map-marker-alt" style="font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                            <p style="margin: 0; font-weight: 600;">Loket Kependudukan</p>
+                            <p style="margin: 0; font-size: 0.9rem; opacity: 0.8;">Kantor Kecamatan Rajagaluh</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Modal -->
+    <div id="serviceModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">
+        <div style="background: white; width: 90%; max-width: 600px; max-height: 90%; border-radius: 12px; overflow: hidden; position: relative;">
+            <div style="padding: 2rem; background: var(--primary-color); color: white; display: flex; justify-content: space-between; align-items: center;">
+                <h3 id="modalTitle" style="margin: 0;">Ajukan Pengantar</h3>
+                <button onclick="closeServiceModal()" style="background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; padding: 0.5rem;">×</button>
+            </div>
+            <div style="padding: 2rem; max-height: 400px; overflow-y: auto;">
+                <div id="modalContent">
+                    <p>Silakan datang langsung ke kantor kecamatan dengan membawa dokumen yang diperlukan, atau hubungi kami untuk informasi lebih lanjut.</p>
+                    <div style="margin-top: 1.5rem;">
+                        <strong>Jam Pelayanan:</strong><br>
+                        Senin - Kamis: 08.00 - 15.00 WIB<br>
+                        Jumat: 08.00 - 11.30 & 13.00 - 15.00 WIB
+                    </div>
+                </div>
+            </div>
+            <div style="padding: 1rem 2rem; background: var(--light-gray); display: flex; gap: 1rem; justify-content: flex-end;">
+                <button onclick="closeServiceModal()" class="btn btn-secondary">Batal</button>
+                <a href="kontak.html" class="btn btn-primary">Hubungi Kami</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="logo.svg" alt="Logo Kecamatan Rajagaluh" class="logo">
+                        <div>
+                            <h3>Kecamatan Rajagaluh</h3>
+                            <p>Kabupaten Majalengka, Jawa Barat</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Melayani masyarakat dengan dedikasi tinggi untuk mewujudkan pemerintahan yang bersih, transparan, dan berorientasi pada pelayanan publik yang berkualitas.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Menu Utama</h4>
+                    <ul class="footer-links">
+                        <li><a href="sejarah.html">Sejarah</a></li>
+                        <li><a href="visi-misi.html">Visi & Misi</a></li>
+                        <li><a href="administrasi.html">Layanan</a></li>
+                        <li><a href="berita.html">Informasi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Kontak</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> Jalan Mutiara No. 189, Rajagaluh Lor, Rajagaluh, Rajagaluh Lor, Majalengka, Kabupaten Majalengka, Jawa Barat 45472</p>
+                        <p><i class="fas fa-phone"></i> (0233) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> info@rajagaluh.majalengkakab.go.id</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Jam Pelayanan</h4>
+                    <div class="office-hours">
+                        <p><strong>Senin - Kamis</strong><br>08.00 - 15.00 WIB</p>
+                        <p><strong>Jumat</strong><br>08.00 - 11.30 WIB<br>13.00 - 15.00 WIB</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Kecamatan Rajagaluh. Seluruh hak cipta dilindungi undang-undang.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Service titles mapping
+        const serviceTitles = {
+            'ktp': 'Pengantar KTP (Kartu Tanda Penduduk)',
+            'kk': 'Pengantar KK (Kartu Keluarga)',
+            'akta': 'Pengantar Akta (Kelahiran/Kematian/Perceraian)'
+        };
+
+        // Open service modal
+        function openServiceModal(serviceType) {
+            const modal = document.getElementById('serviceModal');
+            const modalTitle = document.getElementById('modalTitle');
+            
+            modalTitle.textContent = serviceTitles[serviceType] || 'Ajukan Pengantar';
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close service modal
+        function closeServiceModal() {
+            const modal = document.getElementById('serviceModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('serviceModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeServiceModal();
+            }
+        });
+
+        // Requirements data
+        const requirements = {
+            'ktp_baru': ['Surat pengantar dari RT/RW', 'Fotokopi Kartu Keluarga', 'Fotokopi akta kelahiran', 'Pas foto 4x6 (2 lembar)', 'Surat keterangan sekolah (jika masih sekolah)'],
+            'ktp_perpanjangan': ['KTP lama (asli dan fotokopi)', 'Fotokopi Kartu Keluarga', 'Pas foto 4x6 (2 lembar)', 'Surat pengantar dari RT/RW'],
+            'ktp_penggantian': ['Surat kehilangan dari Polsek (jika hilang)', 'KTP lama (jika rusak/perubahan data)', 'Fotokopi Kartu Keluarga', 'Pas foto 4x6 (2 lembar)', 'Surat pengantar dari RT/RW', 'Dokumen pendukung perubahan data'],
+            'kk_baru': ['Surat pengantar dari RT/RW', 'Surat nikah/cerai (jika ada)', 'KK lama (untuk pisah KK)', 'KTP semua anggota keluarga', 'Akta kelahiran anak-anak', 'Surat keterangan pindah (jika dari luar daerah)'],
+            'kk_perubahan': ['KK asli yang akan diubah', 'KTP kepala keluarga', 'Dokumen pendukung perubahan', 'Akta kelahiran (untuk penambahan anak)', 'Surat nikah (untuk penambahan istri/suami)', 'Surat pengantar dari RT/RW'],
+            'kk_penggantian': ['Surat kehilangan dari Polsek (jika hilang)', 'KK lama (jika rusak)', 'KTP kepala keluarga', 'KTP semua anggota keluarga', 'Surat pengantar dari RT/RW'],
+            'akta_kelahiran': ['Surat keterangan lahir dari dokter/bidan', 'KTP dan KK orang tua', 'Surat nikah orang tua', 'Surat pengantar dari RT/RW', '2 orang saksi (KTP dan KK)'],
+            'akta_kematian': ['Surat keterangan kematian dari dokter', 'KTP dan KK almarhum', 'KTP pelapor', 'Surat pengantar dari RT/RW', '2 orang saksi (KTP dan KK)'],
+            'akta_perceraian': ['Putusan pengadilan yang berkekuatan hukum tetap', 'KTP dan KK kedua belah pihak', 'Akta nikah asli', 'Surat pengantar dari RT/RW', '2 orang saksi (KTP dan KK)']
+        };
+
+        function showRequirements(jenis) {
+            const display = document.getElementById('requirements-display');
+            const content = document.getElementById('requirements-content');
+            
+            if (jenis && requirements[jenis]) {
+                const reqs = requirements[jenis];
+                content.innerHTML = '<ul style="margin: 0; line-height: 1.8;">' + 
+                    reqs.map(req => `<li><i class="fas fa-check" style="color: var(--primary-color); margin-right: 8px;"></i>${req}</li>`).join('') + 
+                    '</ul>';
+                display.style.display = 'block';
+            } else {
+                display.style.display = 'none';
+            }
+        }
+
+        // Form submission
+        document.getElementById('pengantar-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            showNotification('Pengajuan surat pengantar berhasil dikirim! Silakan datang ke kantor kecamatan dengan dokumen asli.', 'success');
+            this.reset();
+            document.getElementById('requirements-display').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

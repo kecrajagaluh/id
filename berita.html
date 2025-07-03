@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Berita dan Pengumuman Kecamatan Rajagaluh - Informasi terkini untuk masyarakat">
+    <title>Berita & Pengumuman - Kecamatan Rajagaluh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Mobile-specific improvements for newsletter subscription */
+        @media (max-width: 768px) {
+            .newsletter-subscription {
+                padding: 1rem 0.5rem !important;
+                margin: 1rem 0 !important;
+            }
+            
+            .newsletter-form {
+                max-width: 100% !important;
+                padding: 0 0.5rem;
+            }
+            
+            .newsletter-form input[type="email"] {
+                padding: 6px 10px !important;
+                font-size: 0.8rem !important;
+            }
+            
+            .newsletter-form button {
+                padding: 6px !important;
+                font-size: 0.8rem !important;
+            }
+            
+            .newsletter-subscription h3 {
+                font-size: 1rem !important;
+            }
+            
+            .newsletter-subscription p {
+                font-size: 0.8rem !important;
+                max-width: 100% !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="logo.svg" alt="Logo Kecamatan Rajagaluh" class="logo">
+                <div class="brand-text">
+                    <h1>Kecamatan Rajagaluh</h1>
+                    <p>Kabupaten Majalengka</p>
+                </div>
+            </div>
+            
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Beranda</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Profil <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sejarah.html">Sejarah</a></li>
+                            <li><a href="visi-misi.html">Visi & Misi</a></li>
+                            <li><a href="struktur-organisasi.html">Struktur Organisasi</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Layanan Publik <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="administrasi.html">Pelayanan Administrasi</a></li>
+                            <li><a href="surat-domisili.html">Surat Keterangan Domisili</a></li>
+                            <li><a href="ktp-kk-akta.html">KTP, KK, Akta</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active">
+                            Informasi Publik <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="berita.html">Berita & Pengumuman</a></li>
+                            <li><a href="agenda.html">Agenda Kegiatan</a></li>
+                            <li><a href="laporan.html">Laporan Tahunan</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="ai-assistant.html" class="nav-link">AI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pkl.html" class="nav-link">PKL</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tentang.html" class="nav-link">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="kontak.html" class="nav-link">Kontak</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Berita & Pengumuman</h1>
+            <p class="page-subtitle">Informasi Terkini dari Kecamatan Rajagaluh</p>
+        </div>
+    </section>
+
+    <!-- Page Content -->
+    <section class="page-content">
+        <div class="container">
+            <!-- Search and Filter -->
+            <div class="content-section">
+                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow-light); margin: 2rem 0;">
+                    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 1rem; align-items: end;" class="search-filter-grid">
+                        <div class="form-group" style="margin: 0;">
+                            <label class="form-label">Cari Berita atau Pengumuman</label>
+                            <input type="text" id="search-input" class="form-input" placeholder="Masukkan kata kunci pencarian...">
+                        </div>
+                        
+                        <div class="form-group" style="margin: 0;">
+                            <label class="form-label">Filter Kategori</label>
+                            <select class="form-select" id="category-filter">
+                                <option value="">Semua Kategori</option>
+                                <option value="pengumuman">Pengumuman</option>
+                                <option value="berita">Berita</option>
+                                <option value="kegiatan">Kegiatan</option>
+                                <option value="layanan">Layanan</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured News -->
+            <div class="content-section">
+                <h2><i class="fas fa-star"></i> Berita Utama</h2>
+                
+                <div style="background: white; border-radius: 12px; box-shadow: var(--shadow-light); overflow: hidden; margin: 2rem 0;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: center; min-height: 400px;" class="featured-news-grid">
+                        <div style="padding: 3rem;" class="featured-news-content">
+                            <div style="background: var(--secondary-color); color: var(--text-dark); padding: 8px 16px; border-radius: 20px; display: inline-block; font-size: 0.875rem; font-weight: 600; margin-bottom: 1rem;">
+                                PENGUMUMAN PENTING
+                            </div>
+                            <h2 style="color: var(--primary-color); margin-bottom: 1rem; font-size: 1.8rem; line-height: 1.3;">
+                                Perubahan Jam Pelayanan Selama Bulan Ramadan 1445 H
+                            </h2>
+                            <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem;">
+                                Dalam rangka menyambut bulan suci Ramadan 1445 H, Kantor Kecamatan Rajagaluh mengumumkan perubahan jam pelayanan untuk memberikan kemudahan bagi masyarakat yang berpuasa.
+                            </p>
+                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; color: var(--text-light); font-size: 0.9rem;">
+                                <span><i class="fas fa-calendar"></i> 15 Maret 2024</span>
+                                <span><i class="fas fa-user"></i> Admin Kecamatan</span>
+                                <span><i class="fas fa-eye"></i> 1,245 views</span>
+                            </div>
+                            <a href="#" class="btn btn-primary">Baca Selengkapnya</a>
+                        </div>
+                        <div style="height: 400px; background: linear-gradient(135deg, var(--primary-color), #1d4ed8); display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;" class="featured-news-image">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- News Grid -->
+            <div class="content-section">
+                <h2><i class="fas fa-newspaper"></i> Berita Terbaru</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 2rem 0;" id="news-container" class="news-grid">
+                    <!-- News Item 1 -->
+                    <article class="news-card searchable-item" data-category="kegiatan">
+                        <div class="news-image">
+                            <div class="news-placeholder" style="background: linear-gradient(135deg, #10b981, #059669);">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                        </div>
+                        <div class="news-content">
+                            <span class="news-category" style="background: #10b981; color: white;">Kegiatan</span>
+                            <h3>Gotong Royong Membersihkan Lingkungan Kecamatan</h3>
+                            <p>Kegiatan gotong royong bersama seluruh masyarakat dalam rangka menjaga kebersihan dan keindahan lingkungan kecamatan dilaksanakan setiap hari Minggu.</p>
+                            <div class="news-meta">
+                                <span><i class="fas fa-calendar"></i> 20 Maret 2024</span>
+                                <span><i class="fas fa-eye"></i> 892 views</span>
+                            </div>
+                            <a href="#" style="color: var(--primary-color); text-decoration: none; font-weight: 500; margin-top: 1rem; display: inline-block;">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- News Item 2 -->
+                    <article class="news-card searchable-item" data-category="layanan">
+                        <div class="news-image">
+                            <div class="news-placeholder" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">
+                                <i class="fas fa-digital-tachograph"></i>
+                            </div>
+                        </div>
+                        <div class="news-content">
+                            <span class="news-category" style="background: #3b82f6; color: white;">Layanan</span>
+                            <h3>Peluncuran Layanan Online Terintegrasi</h3>
+                            <p>Kecamatan Rajagaluh meluncurkan sistem pelayanan online yang memudahkan masyarakat mengurus berbagai dokumen administratif dari rumah.</p>
+                            <div class="news-meta">
+                                <span><i class="fas fa-calendar"></i> 18 Maret 2024</span>
+                                <span><i class="fas fa-eye"></i> 1,156 views</span>
+                            </div>
+                            <a href="#" style="color: var(--primary-color); text-decoration: none; font-weight: 500; margin-top: 1rem; display: inline-block;">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- News Item 3 -->
+                    <article class="news-card searchable-item" data-category="berita">
+                        <div class="news-image">
+                            <div class="news-placeholder" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                        </div>
+                        <div class="news-content">
+                            <span class="news-category" style="background: #8b5cf6; color: white;">Berita</span>
+                            <h3>Pembukaan Pendaftaran Beasiswa Pendidikan</h3>
+                            <p>Pemerintah Kecamatan Rajagaluh membuka pendaftaran beasiswa untuk pelajar berprestasi dari keluarga kurang mampu tingkat SMA dan Perguruan Tinggi.</p>
+                            <div class="news-meta">
+                                <span><i class="fas fa-calendar"></i> 16 Maret 2024</span>
+                                <span><i class="fas fa-eye"></i> 2,341 views</span>
+                            </div>
+                            <a href="#" style="color: var(--primary-color); text-decoration: none; font-weight: 500; margin-top: 1rem; display: inline-block;">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- News Item 4 -->
+                    <article class="news-card searchable-item" data-category="pengumuman">
+                        <div class="news-image">
+                            <div class="news-placeholder" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                        </div>
+                        <div class="news-content">
+                            <span class="news-category" style="background: #f59e0b; color: white;">Pengumuman</span>
+                            <h3>Perbaikan Jalan Utama Kecamatan</h3>
+                            <p>Pengumuman kepada masyarakat tentang pelaksanaan perbaikan jalan utama yang akan menyebabkan gangguan lalu lintas sementara.</p>
+                            <div class="news-meta">
+                                <span><i class="fas fa-calendar"></i> 14 Maret 2024</span>
+                                <span><i class="fas fa-eye"></i> 756 views</span>
+                            </div>
+                            <a href="#" style="color: var(--primary-color); text-decoration: none; font-weight: 500; margin-top: 1rem; display: inline-block;">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- News Item 5 -->
+                    <article class="news-card searchable-item" data-category="kegiatan">
+                        <div class="news-image">
+                            <div class="news-placeholder" style="background: linear-gradient(135deg, #ec4899, #db2777);">
+                                <i class="fas fa-users"></i>
+                            </div>
+                        </div>
+                        <div class="news-content">
+                            <span class="news-category" style="background: #ec4899; color: white;">Kegiatan</span>
+                            <h3>Pelatihan Kewirausahaan untuk UMKM</h3>
+                            <p>Kecamatan mengadakan pelatihan kewirausahaan dan manajemen usaha untuk meningkatkan kapasitas pelaku UMKM di wilayah Rajagaluh.</p>
+                            <div class="news-meta">
+                                <span><i class="fas fa-calendar"></i> 12 Maret 2024</span>
+                                <span><i class="fas fa-eye"></i> 634 views</span>
+                            </div>
+                            <a href="#" style="color: var(--primary-color); text-decoration: none; font-weight: 500; margin-top: 1rem; display: inline-block;">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- News Item 6 -->
+                    <article class="news-card searchable-item" data-category="berita">
+                        <div class="news-image">
+                            <div class="news-placeholder" style="background: linear-gradient(135deg, #06b6d4, #0891b2);">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                        </div>
+                        <div class="news-content">
+                            <span class="news-category" style="background: #06b6d4; color: white;">Berita</span>
+                            <h3>Program Penghijauan Desa Berkelanjutan</h3>
+                            <p>Inisiatif penghijauan berkelanjutan dengan menanam 1000 pohon di berbagai titik strategis untuk menjaga kelestarian lingkungan.</p>
+                            <div class="news-meta">
+                                <span><i class="fas fa-calendar"></i> 10 Maret 2024</span>
+                                <span><i class="fas fa-eye"></i> 923 views</span>
+                            </div>
+                            <a href="#" style="color: var(--primary-color); text-decoration: none; font-weight: 500; margin-top: 1rem; display: inline-block;">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Load More Button -->
+                <div style="text-align: center; margin-top: 3rem;">
+                    <button class="btn btn-secondary" id="load-more-btn">
+                        <i class="fas fa-plus"></i> Muat Lebih Banyak
+                    </button>
+                </div>
+            </div>
+
+            <!-- Announcements Sidebar -->
+            <div class="content-section">
+                <h2><i class="fas fa-bullhorn"></i> Pengumuman Penting</h2>
+                
+                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow-light); margin: 2rem 0;">
+                    <div style="display: grid; gap: 1.5rem;">
+                        <div style="padding: 1.5rem; background: rgba(239, 68, 68, 0.1); border-left: 4px solid #ef4444; border-radius: 8px;">
+                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                <div style="width: 40px; height: 40px; background: #ef4444; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
+                                    <i class="fas fa-exclamation"></i>
+                                </div>
+                                <div>
+                                    <h4 style="color: #dc2626; margin: 0;">Gangguan Sistem Layanan</h4>
+                                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-light);">22 Maret 2024</p>
+                                </div>
+                            </div>
+                            <p style="margin: 0; line-height: 1.6;">Akan ada gangguan sistem layanan online pada tanggal 25 Maret 2024 pukul 01.00-05.00 WIB untuk maintenance rutin.</p>
+                        </div>
+
+                        <div style="padding: 1.5rem; background: rgba(245, 158, 11, 0.1); border-left: 4px solid #f59e0b; border-radius: 8px;">
+                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                <div style="width: 40px; height: 40px; background: #f59e0b; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
+                                    <i class="fas fa-info"></i>
+                                </div>
+                                <div>
+                                    <h4 style="color: #d97706; margin: 0;">Jadwal Pelayanan Libur</h4>
+                                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-light);">20 Maret 2024</p>
+                                </div>
+                            </div>
+                            <p style="margin: 0; line-height: 1.6;">Kantor kecamatan libur pada tanggal 28-29 Maret 2024 dalam rangka cuti bersama Hari Raya Nyepi.</p>
+                        </div>
+
+                        <div style="padding: 1.5rem; background: rgba(16, 185, 129, 0.1); border-left: 4px solid #10b981; border-radius: 8px;">
+                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                <div style="width: 40px; height: 40px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white;">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div>
+                                    <h4 style="color: #059669; margin: 0;">Layanan Baru Tersedia</h4>
+                                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-light);">18 Maret 2024</p>
+                                </div>
+                            </div>
+                            <p style="margin: 0; line-height: 1.6;">Layanan pengurusan surat keterangan berbagai keperluan kini dapat diajukan melalui WhatsApp resmi kecamatan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newsletter Subscription -->
+            <div class="content-section">
+                <h2><i class="fas fa-envelope"></i> Berlangganan Informasi</h2>
+                
+                <div class="newsletter-subscription" style="background: var(--primary-color); color: white; padding: 1.5rem 1rem; border-radius: 12px; text-align: center; margin: 2rem 0;">
+                    <h3 style="color: var(--secondary-color); margin-bottom: 0.8rem; font-size: 1.1rem;">Dapatkan Informasi Terbaru</h3>
+                    <p style="margin-bottom: 1.2rem; opacity: 0.9; max-width: 280px; margin-left: auto; margin-right: auto; font-size: 0.85rem; line-height: 1.4;">
+                        Berlangganan newsletter untuk berita terbaru dari Kecamatan Rajagaluh.
+                    </p>
+                    
+                    <form class="newsletter-form" style="max-width: 250px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.7rem;">
+                        <input type="email" placeholder="Email Anda" style="width: 100%; padding: 8px 12px; border: none; border-radius: 6px; font-family: inherit; font-size: 0.85rem; box-sizing: border-box;">
+                        <button type="submit" class="btn btn-secondary" style="width: 100%; padding: 8px; font-size: 0.85rem;">
+                            <i class="fas fa-paper-plane"></i> Berlangganan
+                        </button>
+                    </form>
+                    
+                    <p style="margin-top: 0.8rem; font-size: 0.75rem; opacity: 0.7;">
+                        *Email dijaga kerahasiaannya
+                    </p>
+                </div>
+            </div>
+
+            <!-- Archive and Statistics -->
+            <div class="content-section">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <!-- Archive -->
+                    <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow-light);">
+                        <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;"><i class="fas fa-archive"></i> Arsip Berita</h3>
+                        <div style="display: grid; gap: 1rem;">
+                            <a href="#" style="display: flex; justify-content: space-between; padding: 1rem; background: var(--light-gray); border-radius: 8px; text-decoration: none; color: var(--text-dark); transition: var(--transition);" onmouseover="this.style.transform='translateX(5px)'" onmouseout="this.style.transform='translateX(0)'">
+                                <span>Maret 2024</span>
+                                <span style="color: var(--primary-color); font-weight: 600;">12 artikel</span>
+                            </a>
+                            <a href="#" style="display: flex; justify-content: space-between; padding: 1rem; background: var(--light-gray); border-radius: 8px; text-decoration: none; color: var(--text-dark); transition: var(--transition);" onmouseover="this.style.transform='translateX(5px)'" onmouseout="this.style.transform='translateX(0)'">
+                                <span>Februari 2024</span>
+                                <span style="color: var(--primary-color); font-weight: 600;">8 artikel</span>
+                            </a>
+                            <a href="#" style="display: flex; justify-content: space-between; padding: 1rem; background: var(--light-gray); border-radius: 8px; text-decoration: none; color: var(--text-dark); transition: var(--transition);" onmouseover="this.style.transform='translateX(5px)'" onmouseout="this.style.transform='translateX(0)'">
+                                <span>Januari 2024</span>
+                                <span style="color: var(--primary-color); font-weight: 600;">15 artikel</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Statistics -->
+                    <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow-light);">
+                        <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;"><i class="fas fa-chart-bar"></i> Statistik</h3>
+                        <div style="display: grid; gap: 1rem;">
+                            <div style="text-align: center; padding: 1rem; background: var(--light-gray); border-radius: 8px;">
+                                <div style="font-size: 2rem; font-weight: bold; color: var(--primary-color);">156</div>
+                                <p style="margin: 0; font-size: 0.9rem;">Total Berita</p>
+                            </div>
+                            <div style="text-align: center; padding: 1rem; background: var(--light-gray); border-radius: 8px;">
+                                <div style="font-size: 2rem; font-weight: bold; color: var(--accent-color);">89</div>
+                                <p style="margin: 0; font-size: 0.9rem;">Pengumuman</p>
+                            </div>
+                            <div style="text-align: center; padding: 1rem; background: var(--light-gray); border-radius: 8px;">
+                                <div style="font-size: 2rem; font-weight: bold; color: var(--secondary-color);">1,234</div>
+                                <p style="margin: 0; font-size: 0.9rem; color: var(--text-dark);">Total Pembaca</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="logo.svg" alt="Logo Kecamatan Rajagaluh" class="logo">
+                        <div>
+                            <h3>Kecamatan Rajagaluh</h3>
+                            <p>Kabupaten Majalengka, Jawa Barat</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Melayani masyarakat dengan dedikasi tinggi untuk mewujudkan pemerintahan yang bersih, transparan, dan berorientasi pada pelayanan publik yang berkualitas.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Menu Utama</h4>
+                    <ul class="footer-links">
+                        <li><a href="sejarah.html">Sejarah</a></li>
+                        <li><a href="visi-misi.html">Visi & Misi</a></li>
+                        <li><a href="administrasi.html">Layanan</a></li>
+                        <li><a href="berita.html">Informasi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Kontak</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> Jalan Mutiara No. 189, Rajagaluh Lor, Rajagaluh, Rajagaluh Lor, Majalengka, Kabupaten Majalengka, Jawa Barat 45472</p>
+                        <p><i class="fas fa-phone"></i> (0233) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> info@rajagaluh.majalengkakab.go.id</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Jam Pelayanan</h4>
+                    <div class="office-hours">
+                        <p><strong>Senin - Kamis</strong><br>08.00 - 15.00 WIB</p>
+                        <p><strong>Jumat</strong><br>08.00 - 11.30 WIB<br>13.00 - 15.00 WIB</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Kecamatan Rajagaluh. Seluruh hak cipta dilindungi undang-undang.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Search functionality
+        document.getElementById('search-input').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const newsItems = document.querySelectorAll('.searchable-item');
+            
+            newsItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
+        // Category filter
+        document.getElementById('category-filter').addEventListener('change', function() {
+            const selectedCategory = this.value;
+            const newsItems = document.querySelectorAll('.searchable-item');
+            
+            newsItems.forEach(item => {
+                const itemCategory = item.getAttribute('data-category');
+                if (selectedCategory === '' || itemCategory === selectedCategory) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
+        // Load more functionality
+        document.getElementById('load-more-btn').addEventListener('click', function() {
+            showNotification('Memuat berita terbaru...', 'info');
+            
+            // Simulate loading more content
+            setTimeout(() => {
+                showNotification('Semua berita telah dimuat.', 'success');
+            }, 1500);
+        });
+
+        // Newsletter subscription
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            if (email) {
+                showNotification('Terima kasih! Anda telah berlangganan newsletter kami.', 'success');
+                this.reset();
+            }
+        });
+    </script>
+</body>
+</html>

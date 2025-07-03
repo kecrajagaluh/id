@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Layanan Administrasi Kecamatan Rajagaluh - Berbagai layanan administrasi untuk masyarakat">
+    <title>Pelayanan Administrasi - Kecamatan Rajagaluh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="logo.svg" alt="Logo Kecamatan Rajagaluh" class="logo">
+                <div class="brand-text">
+                    <h1>Kecamatan Rajagaluh</h1>
+                    <p>Kabupaten Majalengka</p>
+                </div>
+            </div>
+            
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Beranda</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Profil <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sejarah.html">Sejarah</a></li>
+                            <li><a href="visi-misi.html">Visi & Misi</a></li>
+                            <li><a href="struktur-organisasi.html">Struktur Organisasi</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active">
+                            Layanan Publik <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="administrasi.html">Pelayanan Administrasi</a></li>
+                            <li><a href="surat-domisili.html">Surat Keterangan Domisili</a></li>
+                            <li><a href="ktp-kk-akta.html">KTP, KK, Akta</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Informasi Publik <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="berita.html">Berita & Pengumuman</a></li>
+                            <li><a href="agenda.html">Agenda Kegiatan</a></li>
+                            <li><a href="laporan.html">Laporan Tahunan</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="ai-assistant.html" class="nav-link">AI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pkl.html" class="nav-link">PKL</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tentang.html" class="nav-link">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="kontak.html" class="nav-link">Kontak</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Pelayanan Administrasi</h1>
+            <p class="page-subtitle">Layanan Administrasi Terpadu untuk Kemudahan Masyarakat</p>
+        </div>
+    </section>
+
+    <!-- Page Content -->
+    <section class="page-content">
+        <div class="container">
+            <!-- Layanan Unggulan -->
+            <div class="content-section">
+                <h2><i class="fas fa-star"></i> Layanan Administrasi Unggulan</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0;">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>Surat Keterangan Usaha</h3>
+                        <p>Penerbitan surat keterangan untuk keperluan usaha dan UMKM</p>
+                        <ul style="text-align: left; margin: 1rem 0;">
+                            <li>Syarat: KTP, KK, Surat permohonan</li>
+                            <li>Waktu: 1-2 hari kerja</li>
+                            <li>Biaya: Gratis</li>
+                        </ul>
+                        <button onclick="openServiceModal('surat-usaha')" class="btn btn-primary">Ajukan Sekarang</button>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <h3>Surat Keterangan Tidak Mampu</h3>
+                        <p>Untuk keperluan bantuan sosial, kesehatan, dan pendidikan</p>
+                        <ul style="text-align: left; margin: 1rem 0;">
+                            <li>Syarat: KTP, KK, Surat pengantar RT/RW</li>
+                            <li>Waktu: 1 hari kerja</li>
+                            <li>Biaya: Gratis</li>
+                        </ul>
+                        <button onclick="openServiceModal('sktm')" class="btn btn-primary">Ajukan Sekarang</button>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Izin Mendirikan Bangunan</h3>
+                        <p>Perizinan untuk pembangunan rumah dan bangunan lainnya</p>
+                        <ul style="text-align: left; margin: 1rem 0;">
+                            <li>Syarat: Sertifikat tanah, gambar bangunan</li>
+                            <li>Waktu: 7-14 hari kerja</li>
+                            <li>Biaya: Sesuai ketentuan</li>
+                        </ul>
+                        <button onclick="openServiceModal('imb')" class="btn btn-primary">Ajukan Sekarang</button>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Surat Keterangan Kelakuan Baik</h3>
+                        <p>Untuk keperluan melamar kerja, sekolah, dan beasiswa</p>
+                        <ul style="text-align: left; margin: 1rem 0;">
+                            <li>Syarat: KTP, pas foto, surat pengantar</li>
+                            <li>Waktu: 2-3 hari kerja</li>
+                            <li>Biaya: Gratis</li>
+                        </ul>
+                        <button onclick="openServiceModal('skkb')" class="btn btn-primary">Ajukan Sekarang</button>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <h3>Pengantar Nikah</h3>
+                        <p>Surat pengantar untuk prosesi pernikahan di KUA</p>
+                        <ul style="text-align: left; margin: 1rem 0;">
+                            <li>Syarat: KTP calon pengantin, KK, akta lahir</li>
+                            <li>Waktu: 1-2 hari kerja</li>
+                            <li>Biaya: Gratis</li>
+                        </ul>
+                        <button onclick="openServiceModal('nikah')" class="btn btn-primary">Ajukan Sekarang</button>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-id-badge"></i>
+                        </div>
+                        <h3>Legalisir Dokumen</h3>
+                        <p>Pengesahan dokumen untuk berbagai keperluan resmi</p>
+                        <ul style="text-align: left; margin: 1rem 0;">
+                            <li>Syarat: Dokumen asli dan fotokopi</li>
+                            <li>Waktu: Langsung</li>
+                            <li>Biaya: Gratis</li>
+                        </ul>
+                        <button onclick="openServiceModal('legalisir')" class="btn btn-primary">Ajukan Sekarang</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alur Pelayanan -->
+            <div class="content-section">
+                <h2><i class="fas fa-route"></i> Alur Pelayanan</h2>
+                
+                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow-light); margin: 2rem 0;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                        <div style="text-align: center; padding: 1rem; background: var(--light-gray); border-radius: 8px;">
+                            <div style="width: 60px; height: 60px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem; font-weight: bold;">1</div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Persiapan Dokumen</h4>
+                            <p style="font-size: 0.9rem;">Siapkan semua dokumen yang diperlukan sesuai jenis layanan</p>
+                        </div>
+
+                        <div style="text-align: center; padding: 1rem; background: var(--light-gray); border-radius: 8px;">
+                            <div style="width: 60px; height: 60px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem; font-weight: bold;">2</div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Pengajuan</h4>
+                            <p style="font-size: 0.9rem;">Datang ke kantor kecamatan atau ajukan melalui online</p>
+                        </div>
+
+                        <div style="text-align: center; padding: 1rem; background: var(--light-gray); border-radius: 8px;">
+                            <div style="width: 60px; height: 60px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem; font-weight: bold;">3</div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Verifikasi</h4>
+                            <p style="font-size: 0.9rem;">Petugas akan memverifikasi kelengkapan dokumen</p>
+                        </div>
+
+                        <div style="text-align: center; padding: 1rem; background: var(--light-gray); border-radius: 8px;">
+                            <div style="width: 60px; height: 60px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem; font-weight: bold;">4</div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Proses</h4>
+                            <p style="font-size: 0.9rem;">Dokumen diproses sesuai waktu yang telah ditentukan</p>
+                        </div>
+
+                        <div style="text-align: center; padding: 1rem; background: var(--light-gray); border-radius: 8px;">
+                            <div style="width: 60px; height: 60px; background: var(--secondary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: var(--text-dark); font-size: 1.5rem; font-weight: bold;">5</div>
+                            <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">Selesai</h4>
+                            <p style="font-size: 0.9rem;">Dokumen siap diambil sesuai jadwal yang diberikan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Syarat dan Ketentuan -->
+            <div class="content-section">
+                <h2><i class="fas fa-info-circle"></i> Syarat dan Ketentuan Umum</h2>
+                
+                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow-light); margin: 2rem 0;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                        <div>
+                            <h3 style="color: var(--primary-color); margin-bottom: 1rem;"><i class="fas fa-folder-open"></i> Dokumen Wajib</h3>
+                            <ul style="line-height: 1.8;">
+                                <li>Kartu Tanda Penduduk (KTP) yang masih berlaku</li>
+                                <li>Kartu Keluarga (KK) asli dan fotokopi</li>
+                                <li>Surat pengantar dari RT/RW setempat</li>
+                                <li>Pas foto terbaru sesuai kebutuhan</li>
+                                <li>Dokumen pendukung lainnya sesuai jenis layanan</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 style="color: var(--primary-color); margin-bottom: 1rem;"><i class="fas fa-clock"></i> Waktu Pelayanan</h3>
+                            <ul style="line-height: 1.8;">
+                                <li><strong>Senin - Kamis:</strong> 08.00 - 15.00 WIB</li>
+                                <li><strong>Jumat:</strong> 08.00 - 11.30 WIB dan 13.00 - 15.00 WIB</li>
+                                <li><strong>Sabtu - Minggu:</strong> Tutup</li>
+                                <li>Pengajuan online 24 jam</li>
+                                <li>Respon maksimal 1x24 jam</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 style="color: var(--primary-color); margin-bottom: 1rem;"><i class="fas fa-money-bill-wave"></i> Biaya Layanan</h3>
+                            <ul style="line-height: 1.8;">
+                                <li>Sebagian besar layanan <strong>GRATIS</strong></li>
+                                <li>Biaya retribusi sesuai Perda yang berlaku</li>
+                                <li>Pembayaran dapat dilakukan tunai</li>
+                                <li>Struk pembayaran wajib disimpan</li>
+                                <li>Tidak ada pungutan liar</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 style="color: var(--primary-color); margin-bottom: 1rem;"><i class="fas fa-shield-alt"></i> Jaminan Layanan</h3>
+                            <ul style="line-height: 1.8;">
+                                <li>Pelayanan sesuai standar waktu</li>
+                                <li>Tidak ada diskriminasi</li>
+                                <li>Kerahasiaan data terjamin</li>
+                                <li>Pelayanan ramah dan profesional</li>
+                                <li>Pengaduan ditangani dengan cepat</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Pengajuan Online -->
+            <div class="content-section">
+                <h2><i class="fas fa-laptop"></i> Pengajuan Online</h2>
+                
+                <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow-light); margin: 2rem 0;">
+                    <p style="text-align: center; margin-bottom: 2rem; font-size: 1.1rem;">
+                        Untuk kemudahan masyarakat, beberapa layanan dapat diajukan secara online. Silakan isi form di bawah ini:
+                    </p>
+                    
+                    <form id="pengajuan-form" style="max-width: 600px; margin: 0 auto;">
+                        <div class="form-group">
+                            <label class="form-label">Jenis Layanan *</label>
+                            <select class="form-select" name="jenis_layanan" required>
+                                <option value="">Pilih Jenis Layanan</option>
+                                <option value="surat_usaha">Surat Keterangan Usaha</option>
+                                <option value="sktm">Surat Keterangan Tidak Mampu</option>
+                                <option value="skkb">Surat Keterangan Kelakuan Baik</option>
+                                <option value="pengantar_nikah">Pengantar Nikah</option>
+                                <option value="legalisir">Legalisir Dokumen</option>
+                                <option value="lainnya">Lainnya</option>
+                            </select>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div class="form-group">
+                                <label class="form-label">Nama Lengkap *</label>
+                                <input type="text" class="form-input" name="nama_lengkap" placeholder="Masukkan nama lengkap" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">NIK *</label>
+                                <input type="text" class="form-input" name="nik" placeholder="Nomor Induk Kependudukan" required maxlength="16">
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div class="form-group">
+                                <label class="form-label">Nomor Telepon *</label>
+                                <input type="tel" class="form-input" name="telepon" placeholder="Contoh: 08123456789" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-input" name="email" placeholder="contoh@email.com">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Alamat Lengkap *</label>
+                            <textarea class="form-textarea" name="alamat" placeholder="Masukkan alamat lengkap sesuai KTP" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Keperluan/Tujuan *</label>
+                            <textarea class="form-textarea" name="keperluan" placeholder="Jelaskan keperluan atau tujuan pembuatan surat" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Catatan Tambahan</label>
+                            <textarea class="form-textarea" name="catatan" placeholder="Catatan atau informasi tambahan"></textarea>
+                        </div>
+
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <button type="submit" class="btn btn-primary" style="padding: 15px 40px; font-size: 1.1rem;">
+                                <i class="fas fa-paper-plane"></i> Kirim Pengajuan
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Kontak Bantuan -->
+            <div class="content-section">
+                <h2><i class="fas fa-headset"></i> Butuh Bantuan?</h2>
+                
+                <div style="background: var(--primary-color); color: white; padding: 2rem; border-radius: 12px; text-align: center; margin: 2rem 0;">
+                    <h3 style="color: var(--secondary-color); margin-bottom: 1rem;">Tim Customer Service Siap Membantu</h3>
+                    <p style="margin-bottom: 2rem; opacity: 0.9;">
+                        Jika Anda mengalami kesulitan atau memerlukan informasi lebih lanjut, silakan hubungi kami:
+                    </p>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                        <div>
+                            <i class="fas fa-phone" style="font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                            <p style="margin: 0; font-weight: 600;">(0233) 123-4567</p>
+                            <p style="margin: 0; font-size: 0.9rem; opacity: 0.8;">Senin - Jumat, 08.00 - 15.00 WIB</p>
+                        </div>
+                        
+                        <div>
+                            <i class="fas fa-envelope" style="font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                            <p style="margin: 0; font-weight: 600;">pelayanan@rajagaluh.majalengkakab.go.id</p>
+                            <p style="margin: 0; font-size: 0.9rem; opacity: 0.8;">Respon maksimal 1x24 jam</p>
+                        </div>
+                        
+                        <div>
+                            <i class="fas fa-map-marker-alt" style="font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                            <p style="margin: 0; font-weight: 600;">Kantor Kecamatan Rajagaluh</p>
+                            <p style="margin: 0; font-size: 0.9rem; opacity: 0.8;">Jalan Mutiara No. 189, Rajagaluh Lor, Rajagaluh, Rajagaluh Lor, Majalengka, Kabupaten Majalengka, Jawa Barat 45472</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Modal -->
+    <div id="serviceModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">
+        <div style="background: white; width: 90%; max-width: 600px; max-height: 90%; border-radius: 12px; overflow: hidden; position: relative;">
+            <div style="padding: 2rem; background: var(--primary-color); color: white; display: flex; justify-content: space-between; align-items: center;">
+                <h3 id="modalTitle" style="margin: 0;">Ajukan Layanan</h3>
+                <button onclick="closeServiceModal()" style="background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; padding: 0.5rem;">×</button>
+            </div>
+            <div style="padding: 2rem; max-height: 400px; overflow-y: auto;">
+                <div id="modalContent">
+                    <p>Silakan datang langsung ke kantor kecamatan dengan membawa dokumen yang diperlukan, atau hubungi kami untuk informasi lebih lanjut.</p>
+                    <div style="margin-top: 1.5rem;">
+                        <strong>Jam Pelayanan:</strong><br>
+                        Senin - Kamis: 08.00 - 15.00 WIB<br>
+                        Jumat: 08.00 - 11.30 & 13.00 - 15.00 WIB
+                    </div>
+                </div>
+            </div>
+            <div style="padding: 1rem 2rem; background: var(--light-gray); display: flex; gap: 1rem; justify-content: flex-end;">
+                <button onclick="closeServiceModal()" class="btn btn-secondary">Batal</button>
+                <a href="kontak.html" class="btn btn-primary">Hubungi Kami</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="logo.svg" alt="Logo Kecamatan Rajagaluh" class="logo">
+                        <div>
+                            <h3>Kecamatan Rajagaluh</h3>
+                            <p>Kabupaten Majalengka, Jawa Barat</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Melayani masyarakat dengan dedikasi tinggi untuk mewujudkan pemerintahan yang bersih, transparan, dan berorientasi pada pelayanan publik yang berkualitas.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Menu Utama</h4>
+                    <ul class="footer-links">
+                        <li><a href="sejarah.html">Sejarah</a></li>
+                        <li><a href="visi-misi.html">Visi & Misi</a></li>
+                        <li><a href="administrasi.html">Layanan</a></li>
+                        <li><a href="berita.html">Informasi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Kontak</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> Jalan Mutiara No. 189, Rajagaluh Lor, Rajagaluh, Rajagaluh Lor, Majalengka, Kabupaten Majalengka, Jawa Barat 45472</p>
+                        <p><i class="fas fa-phone"></i> (0233) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> info@rajagaluh.majalengkakab.go.id</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Jam Pelayanan</h4>
+                    <div class="office-hours">
+                        <p><strong>Senin - Kamis</strong><br>08.00 - 15.00 WIB</p>
+                        <p><strong>Jumat</strong><br>08.00 - 11.30 WIB<br>13.00 - 15.00 WIB</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Kecamatan Rajagaluh. Seluruh hak cipta dilindungi undang-undang.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // Service titles mapping
+        const serviceTitles = {
+            'surat-usaha': 'Surat Keterangan Usaha',
+            'sktm': 'Surat Keterangan Tidak Mampu',
+            'imb': 'Izin Mendirikan Bangunan',
+            'skkb': 'Surat Keterangan Kelakuan Baik',
+            'nikah': 'Pengantar Nikah',
+            'legalisir': 'Legalisir Dokumen'
+        };
+
+        // Open service modal
+        function openServiceModal(serviceType) {
+            const modal = document.getElementById('serviceModal');
+            const modalTitle = document.getElementById('modalTitle');
+            
+            modalTitle.textContent = serviceTitles[serviceType] || 'Ajukan Layanan';
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close service modal
+        function closeServiceModal() {
+            const modal = document.getElementById('serviceModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('serviceModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeServiceModal();
+            }
+        });
+
+        // Form submission handler
+        document.getElementById('pengajuan-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulate form submission
+            showNotification('Pengajuan Anda telah dikirim! Tim kami akan menghubungi Anda dalam 1x24 jam.', 'success');
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>

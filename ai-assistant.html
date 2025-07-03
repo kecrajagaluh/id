@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI Assistant Kecamatan Rajagaluh - Asisten virtual untuk informasi dan pelayanan">
+    <title>AI Assistant - Kecamatan Rajagaluh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="logo.svg" alt="Logo Kecamatan Rajagaluh" class="logo">
+                <div class="brand-text">
+                    <h1>Kecamatan Rajagaluh</h1>
+                    <p>Kabupaten Majalengka</p>
+                </div>
+            </div>
+            
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Beranda</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Profil <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sejarah.html">Sejarah</a></li>
+                            <li><a href="visi-misi.html">Visi & Misi</a></li>
+                            <li><a href="struktur-organisasi.html">Struktur Organisasi</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Layanan Publik <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="administrasi.html">Pelayanan Administrasi</a></li>
+                            <li><a href="surat-domisili.html">Surat Keterangan Domisili</a></li>
+                            <li><a href="ktp-kk-akta.html">KTP, KK, Akta</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Informasi Publik <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="berita.html">Berita & Pengumuman</a></li>
+                            <li><a href="agenda.html">Agenda Kegiatan</a></li>
+                            <li><a href="laporan.html">Laporan Tahunan</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">AI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pkl.html" class="nav-link">PKL</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tentang.html" class="nav-link">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="kontak.html" class="nav-link">Kontak</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">AI Assistant</h1>
+            <p class="page-subtitle">Asisten Virtual untuk Informasi dan Pelayanan Kecamatan</p>
+        </div>
+    </section>
+
+    <!-- Page Content -->
+    <section class="page-content">
+        <div class="container">
+            <!-- AI Introduction -->
+            <div class="content-section">
+                <div style="background: white; padding: 3rem; border-radius: 12px; box-shadow: var(--shadow-light); margin: 2rem 0; text-align: center;">
+                    <div style="width: 120px; height: 120px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: white; font-size: 3rem;">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h2 style="color: var(--primary-color); margin-bottom: 1rem;">Asisten AI Kecamatan Rajagaluh</h2>
+                    <p style="max-width: 700px; margin: 0 auto; line-height: 1.8; color: var(--text-light);">
+                        Selamat datang di layanan AI Assistant! Saya siap membantu Anda dengan informasi seputar pelayanan kecamatan, prosedur administrasi, dan menjawab pertanyaan umum tentang Kecamatan Rajagaluh.
+                    </p>
+                </div>
+            </div>
+
+            <!-- AI Chat Interface -->
+            <div class="content-section">
+                <h2><i class="fas fa-comments"></i> Chat dengan AI Assistant</h2>
+                
+                <div style="background: white; border-radius: 12px; box-shadow: var(--shadow-light); margin: 2rem 0; overflow: hidden; max-width: 1200px; width: 100%;">
+                    <!-- Chat Messages Container -->
+                    <div id="chat-messages" style="height: 600px; overflow-y: auto; padding: 2rem; background: linear-gradient(135deg, #f8fafc, #e2e8f0);">
+                        <div class="ai-message" style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                            <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem; flex-shrink: 0;">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div style="background: white; padding: 1rem; border-radius: 12px; box-shadow: var(--shadow-light); max-width: 80%;">
+                                <p style="margin: 0; line-height: 1.6;">
+                                    Halo! Saya adalah AI Assistant Kecamatan Rajagaluh. Saya dapat membantu Anda dengan:
+                                    <br><br>
+                                    • Informasi pelayanan administrasi<br>
+                                    • Prosedur pengurusan dokumen<br>
+                                    • Jadwal dan kontak kantor<br>
+                                    • Pertanyaan umum tentang kecamatan<br>
+                                    <br>
+                                    Silakan ajukan pertanyaan Anda!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Chat Input -->
+                    <div style="padding: 1.5rem; border-top: 1px solid var(--border-color); background: white;">
+                        <div style="display: flex; gap: 1rem; align-items: end;">
+                            <div style="flex: 1;">
+                                <textarea id="chat-input" placeholder="Ketik pertanyaan Anda di sini..." style="width: 100%; padding: 1rem; border: 1px solid var(--border-color); border-radius: 8px; resize: vertical; min-height: 60px; max-height: 120px; font-family: inherit; line-height: 1.5;"></textarea>
+                            </div>
+                            <button id="send-button" class="btn btn-primary" style="padding: 1rem 1.5rem; height: fit-content;">
+                                <i class="fas fa-paper-plane"></i> Kirim
+                            </button>
+                        </div>
+                        
+                        <div style="margin-top: 1rem; display: flex; flex-wrap: gap: 0.5rem;">
+                            <button onclick="askPresetQuestion('Bagaimana cara mengurus KTP?')" class="btn btn-secondary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">
+                                Cara mengurus KTP
+                            </button>
+                            <button onclick="askPresetQuestion('Apa saja syarat surat domisili?')" class="btn btn-secondary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">
+                                Syarat surat domisili
+                            </button>
+                            <button onclick="askPresetQuestion('Jam kerja kantor kecamatan?')" class="btn btn-secondary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">
+                                Jam kerja kantor
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Features -->
+            <div class="content-section">
+                <h2><i class="fas fa-star"></i> Fitur AI Assistant</h2>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 2rem 0;">
+                    <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow-light); text-align: center;">
+                        <div style="width: 80px; height: 80px; background: #10b981; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 2rem;">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Tanya Jawab Instan</h3>
+                        <p style="color: var(--text-light); line-height: 1.6;">
+                            Dapatkan jawaban cepat untuk pertanyaan seputar layanan dan prosedur administrasi kecamatan.
+                        </p>
+                    </div>
+
+                    <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow-light); text-align: center;">
+                        <div style="width: 80px; height: 80px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 2rem;">
+                            <i class="fas fa-file-text"></i>
+                        </div>
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Panduan Dokumen</h3>
+                        <p style="color: var(--text-light); line-height: 1.6;">
+                            Informasi lengkap tentang syarat dan prosedur pengurusan berbagai dokumen kependudukan.
+                        </p>
+                    </div>
+
+                    <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow-light); text-align: center;">
+                        <div style="width: 80px; height: 80px; background: #f59e0b; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 2rem;">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Layanan 24/7</h3>
+                        <p style="color: var(--text-light); line-height: 1.6;">
+                            AI Assistant tersedia kapan saja untuk membantu Anda mendapatkan informasi yang dibutuhkan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Disclaimer -->
+            <div class="content-section">
+                <div style="background: rgba(245, 158, 11, 0.1); padding: 2rem; border-radius: 8px; border-left: 4px solid var(--accent-color);">
+                    <h4 style="color: var(--accent-color); margin-bottom: 1rem;"><i class="fas fa-info-circle"></i> Catatan Penting</h4>
+                    <ul style="margin: 0; line-height: 1.8; color: var(--text-dark);">
+                        <li>AI Assistant memberikan informasi umum berdasarkan data yang tersedia</li>
+                        <li>Untuk keperluan resmi, silakan konfirmasi langsung ke kantor kecamatan</li>
+                        <li>Informasi dapat berubah sewaktu-waktu sesuai regulasi terbaru</li>
+                        <li>Jika membutuhkan bantuan khusus, hubungi petugas melalui kontak resmi</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="logo.svg" alt="Logo Kecamatan Rajagaluh" class="logo">
+                        <div>
+                            <h3>Kecamatan Rajagaluh</h3>
+                            <p>Kabupaten Majalengka, Jawa Barat</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Melayani masyarakat dengan dedikasi tinggi untuk mewujudkan pemerintahan yang bersih, transparan, dan berorientasi pada pelayanan publik yang berkualitas.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Menu Utama</h4>
+                    <ul class="footer-links">
+                        <li><a href="sejarah.html">Sejarah</a></li>
+                        <li><a href="visi-misi.html">Visi & Misi</a></li>
+                        <li><a href="administrasi.html">Layanan</a></li>
+                        <li><a href="berita.html">Informasi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Kontak</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> Jalan Mutiara No. 189, Rajagaluh Lor, Rajagaluh, Rajagaluh Lor, Majalengka, Kabupaten Majalengka, Jawa Barat 45472</p>
+                        <p><i class="fas fa-phone"></i> (0233) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> info@rajagaluh.majalengkakab.go.id</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Jam Pelayanan</h4>
+                    <div class="office-hours">
+                        <p><strong>Senin - Kamis</strong><br>08.00 - 15.00 WIB</p>
+                        <p><strong>Jumat</strong><br>08.00 - 11.30 WIB<br>13.00 - 15.00 WIB</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kecamatan Rajagaluh. Seluruh hak cipta dilindungi undang-undang.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="ai.js"></script>
+</body>
+</html>
