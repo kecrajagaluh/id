@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://dl.dropboxusercontent.com/scl/fi/nhme9azp8wqctkvg6mm9g/style.css?rlkey=bmo2a5uv9wm1d999b45ybxptt&st=ik7bqqs9">
 </head>
 <body>
     <!-- Header -->
@@ -455,52 +455,7 @@
         </div>
     </footer>
 
-    <script src="main.js"></script>
-    <script>
-        // Service titles mapping
-        const serviceTitles = {
-            'surat-usaha': 'Surat Keterangan Usaha',
-            'sktm': 'Surat Keterangan Tidak Mampu',
-            'imb': 'Izin Mendirikan Bangunan',
-            'skkb': 'Surat Keterangan Kelakuan Baik',
-            'nikah': 'Pengantar Nikah',
-            'legalisir': 'Legalisir Dokumen'
-        };
-
-        // Open service modal
-        function openServiceModal(serviceType) {
-            const modal = document.getElementById('serviceModal');
-            const modalTitle = document.getElementById('modalTitle');
-            
-            modalTitle.textContent = serviceTitles[serviceType] || 'Ajukan Layanan';
-            modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-
-        // Close service modal
-        function closeServiceModal() {
-            const modal = document.getElementById('serviceModal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal when clicking outside
-        document.getElementById('serviceModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeServiceModal();
-            }
-        });
-
-        // Form submission handler
-        document.getElementById('pengajuan-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Simulate form submission
-            showNotification('Pengajuan Anda telah dikirim! Tim kami akan menghubungi Anda dalam 1x24 jam.', 'success');
-            
-            // Reset form
-            this.reset();
-        });
-    </script>
+    <script src="https://dl.dropboxusercontent.com/scl/fi/nwfev2kfgin9ar7ijyecx/main.js?rlkey=c0b6bijev0e3w4joz54ebz0n7&st=ti4cs9ga"></script>
+    <script src="https://dl.dropboxusercontent.com/scl/fi/b93ymwuwcujstofur3dpk/administrasi.js?rlkey=x1dj4uoghuf4nz0rzh0i47lgz&st=h71kxa62"></script>
 </body>
 </html>

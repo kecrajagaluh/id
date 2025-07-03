@@ -154,6 +154,39 @@ Changelog:
   * Made email input and button smaller with proper mobile sizing
   * Added mobile-specific CSS media queries for subscription section
   * Improved text sizing and spacing for mobile devices
+- July 03, 2025. Separated CSS and JavaScript from HTML files:
+  * Extracted embedded JavaScript from 7 HTML files (administrasi, agenda, berita, kontak, ktp-kk-akta, laporan, surat-domisili)
+  * Created individual JavaScript files matching HTML names for better organization
+  * Extracted embedded CSS from berita.html into separate berita.css file
+  * Updated all HTML files to reference external CSS and JS files instead of embedded code
+  * Improved code maintainability and separation of concerns
+- July 03, 2025. Enhanced AI Assistant to SuperAssistant with advanced capabilities:
+  * Integrated real Gemini 2.0 Flash API with user's API key for actual AI responses
+  * Added advanced code copying functionality with syntax highlighting using Prism.js
+  * Implemented modern UI with animations, gradients, and interactive elements
+  * Enhanced chat interface with typing indicators and professional message styling
+  * Added support for code blocks with one-click copy functionality
+  * Created comprehensive capability showcase with 6 major AI features
+  * Updated from basic mock responses to full Gemini API integration
+  * Added support for markdown formatting, bold text, and inline code
+  * Implemented supercharged modern design with floating animations and glassmorphism effects
+- July 03, 2025. Enhanced AI SuperAssistant with Deep Thinking, Image Analysis & Kecamatan Info:
+  * Added Deep Thinking capability with comprehensive analysis before responding
+  * Integrated image upload and analysis functionality using Gemini vision capabilities
+  * Added complete Kecamatan Rajagaluh information database (services, requirements, costs)
+  * Updated quick question buttons to focus on KTP/KK/Akta and other government services
+  * Added detailed information for all 8 villages in Kecamatan Rajagaluh
+  * Enhanced AI knowledge base with specific office hours, contact details, and service procedures
+  * Implemented image preview system with drag-and-drop functionality
+  * Created dedicated sections for Deep Thinking mode visualization
+- July 03, 2025. Enhanced AI with token authentication and mobile optimization:
+  * Removed Deep Thinking functionality as requested by user
+  * Added token authentication system with valid tokens: kecamatan123, admin999, rajagaluh
+  * Made recommendation buttons stylish with gradients and mobile-responsive design
+  * Updated AI introduction to focus specifically on Kecamatan Rajagaluh services
+  * Added blue verified badge next to "AI SuperAssistant" text in header and chat
+  * Implemented secure access control requiring token before AI chat usage
+  * Added shake animation for invalid token attempts and success notifications
 
 ## User Preferences
 

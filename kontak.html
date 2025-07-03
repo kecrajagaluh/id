@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://dl.dropboxusercontent.com/scl/fi/nhme9azp8wqctkvg6mm9g/style.css?rlkey=bmo2a5uv9wm1d999b45ybxptt&st=ik7bqqs9">
 </head>
 <body>
     <!-- Header -->
@@ -464,64 +464,7 @@
         </div>
     </footer>
 
-    <script src="main.js"></script>
-    <script>
-        // Contact form submission
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
-            
-            // Validate required fields
-            const requiredFields = ['nama_lengkap', 'telepon', 'alamat', 'jenis_pengaduan', 'judul', 'detail'];
-            let isValid = true;
-            
-            requiredFields.forEach(field => {
-                if (!data[field] || data[field].trim() === '') {
-                    isValid = false;
-                    const input = this.querySelector(`[name="${field}"]`);
-                    input.style.borderColor = '#ef4444';
-                    input.addEventListener('input', function() {
-                        this.style.borderColor = '#e5e7eb';
-                    });
-                }
-            });
-            
-            if (!isValid) {
-                showNotification('Mohon lengkapi semua field yang wajib diisi.', 'error');
-                return;
-            }
-            
-            // Generate ticket number
-            const ticketNumber = 'RJG-' + Date.now().toString().slice(-8);
-            
-            // Show success message
-            showNotification(`Pengaduan berhasil dikirim! Nomor tiket: ${ticketNumber}. Kami akan menindaklanjuti dalam 1x24 jam.`, 'success');
-            
-            // Reset form
-            this.reset();
-            
-            // Remove any error styling
-            this.querySelectorAll('input, select, textarea').forEach(field => {
-                field.style.borderColor = '#e5e7eb';
-            });
-        });
-
-        // Phone number validation
-        document.querySelector('input[name="telepon"]').addEventListener('input', function() {
-            let value = this.value.replace(/\D/g, '');
-            if (value.length > 0 && !value.startsWith('0') && !value.startsWith('62')) {
-                value = '0' + value;
-            }
-            this.value = value;
-        });
-
-        // NIK validation
-        document.querySelector('input[name="nik"]').addEventListener('input', function() {
-            this.value = this.value.replace(/\D/g, '').slice(0, 16);
-        });
-    </script>
+    <script src="https://dl.dropboxusercontent.com/scl/fi/nwfev2kfgin9ar7ijyecx/main.js?rlkey=c0b6bijev0e3w4joz54ebz0n7&st=ti4cs9ga"></script>
+    <script src="https://dl.dropboxusercontent.com/scl/fi/l61ec51u88x71v7n5q8ui/kontak.js?rlkey=tuu1bvohj1vjscqwnql6f02de&st=ro9hw3qg"></script>
 </body>
 </html>
