@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://dl.dropboxusercontent.com/scl/fi/nhme9azp8wqctkvg6mm9g/style.css?rlkey=bmo2a5uv9wm1d999b45ybxptt&st=ik7bqqs9">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
     <style>
         /* AI Assistant Animations and Styles */
@@ -136,11 +136,89 @@
         
         .typing-dot:nth-child(2) { animation-delay: 0.2s; }
         .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+        
+        /* Dark mode support for AI chat */
+        .chat-container {
+            background: var(--white) !important;
+            border: 1px solid var(--border-color) !important;
+            box-shadow: 0 20px 40px var(--shadow-heavy) !important;
+        }
+        
+        .token-auth-container {
+            background: linear-gradient(135deg, var(--light-gray), var(--border-color)) !important;
+        }
+        
+        .token-auth-card {
+            background: var(--white) !important;
+            box-shadow: 0 4px 15px var(--shadow-medium) !important;
+        }
+        
+        .token-auth-card h4 {
+            color: var(--text-dark) !important;
+        }
+        
+        .token-auth-card p {
+            color: var(--text-light) !important;
+        }
+        
+        .token-input {
+            border: 2px solid var(--border-color) !important;
+            background: var(--white) !important;
+            color: var(--text-dark) !important;
+        }
+        
+        .chat-messages-container {
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--border-color) 100%) !important;
+        }
+        
+        .ai-message-card {
+            background: var(--white) !important;
+            box-shadow: 0 4px 15px var(--shadow-light) !important;
+        }
+        
+        .user-message-card {
+            background: var(--primary-color) !important;
+        }
+        
+        .ai-message-text {
+            color: var(--text-dark) !important;
+        }
+        
+        .user-message-text {
+            color: var(--white) !important;
+        }
+        
+        .chat-input-container {
+            background: var(--white) !important;
+            border-top: 1px solid var(--border-color) !important;
+        }
+        
+        .chat-input {
+            background: var(--light-gray) !important;
+            border: 2px solid var(--border-color) !important;
+            color: var(--text-dark) !important;
+        }
+        
+        .chat-input::placeholder {
+            color: var(--text-light) !important;
+        }
+        
+        .image-preview {
+            background: var(--light-gray) !important;
+            border: 2px solid var(--border-color) !important;
+        }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
 </head>
 <body>
+    <script>
+        // Check authentication status
+        const loginStatus = localStorage.getItem('loginStatus');
+        if (!loginStatus || loginStatus !== 'authenticated') {
+            window.location.href = 'login.html';
+        }
+    </script>
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -188,15 +266,27 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html" class="nav-link active">AI</a>
+                        <a href="ai-assistant.html" class="nav-link active">AI</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- Desktop: Grouped under Lainnya -->
+                    <li class="nav-item dropdown desktop-only">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Lainnya <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="pkl.html">PKL</a></li>
+                            <li><a href="tentang.html">Tentang</a></li>
+                            <li><a href="kontak.html">Kontak</a></li>
+                        </ul>
+                    </li>
+                    <!-- Mobile: Individual items -->
+                    <li class="nav-item mobile-only">
                         <a href="pkl.html" class="nav-link">PKL</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item mobile-only">
                         <a href="tentang.html" class="nav-link">Tentang</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item mobile-only">
                         <a href="kontak.html" class="nav-link">Kontak</a>
                     </li>
                 </ul>
@@ -279,22 +369,23 @@
                     </div>
                 </div>
                 
-                <div style="background: white; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); margin: 2rem 0; overflow: hidden; max-width: 1200px; width: 100%; border: 1px solid rgba(102, 126, 234, 0.1);">
+                <div class="chat-container" style="border-radius: 20px; margin: 2rem 0; overflow: hidden; max-width: 1200px; width: 100%;">
                     
                     <!-- Token Authentication -->
-                    <div id="token-auth" style="padding: 2rem; text-align: center; background: linear-gradient(135deg, #f8fafc, #e2e8f0);">
+                    <div id="token-auth" class="token-auth-container" style="padding: 2rem; text-align: center;">
                         <div style="max-width: 400px; margin: 0 auto;">
-                            <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                            <div class="token-auth-card" style="padding: 2rem; border-radius: 15px;">
                                 <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
                                     <i class="fas fa-lock" style="color: white; font-size: 1.5rem;"></i>
                                 </div>
-                                <h4 style="margin: 0 0 1rem; color: #374151; font-size: 1.2rem;">Masukkan Token Akses</h4>
-                                <p style="margin: 0 0 1.5rem; color: #6b7280; font-size: 0.9rem;">Token diperlukan untuk mengakses AI SuperAssistant</p>
+                                <h4 style="margin: 0 0 1rem; font-size: 1.2rem;">Masukkan Token Akses</h4>
+                                <p style="margin: 0 0 1.5rem; font-size: 0.9rem;">Token diperlukan untuk mengakses AI SuperAssistant</p>
                                 <input 
                                     type="password" 
                                     id="access-token" 
+                                    class="token-input"
                                     placeholder="Masukkan token akses..." 
-                                    style="width: 100%; padding: 0.8rem; border: 2px solid #e5e7eb; border-radius: 10px; font-size: 1rem; text-align: center; margin-bottom: 1rem; box-sizing: border-box;"
+                                    style="width: 100%; padding: 0.8rem; border-radius: 10px; font-size: 1rem; text-align: center; margin-bottom: 1rem; box-sizing: border-box;"
                                     onkeypress="if(event.key==='Enter') validateToken()"
                                 >
                                 <button 
@@ -314,12 +405,12 @@
                     
                     <!-- Chat Messages Container -->
                     <div id="chat-container" style="display: none;">
-                    <div id="chat-messages" style="height: 600px; overflow-y: auto; padding: 2rem; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); position: relative;">
+                    <div id="chat-messages" class="chat-messages-container" style="height: 600px; overflow-y: auto; padding: 2rem; position: relative;">
                         <div class="ai-message" style="display: flex; gap: 1rem; margin-bottom: 1.5rem; animation: slideInLeft 0.5s ease-out;">
                             <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; flex-shrink: 0; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);">
                                 <i class="fas fa-brain"></i>
                             </div>
-                            <div style="background: white; padding: 1.5rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); max-width: 80%; border-left: 4px solid #667eea;">
+                            <div class="ai-message-card" style="padding: 1.5rem; border-radius: 15px; max-width: 80%; border-left: 4px solid #667eea;">
                                 <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
                                     <span style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">
                                         AI SuperAssistant 
@@ -352,9 +443,9 @@
                     </div>
                     
                     <!-- Chat Input -->
-                    <div style="padding: 2rem; border-top: 1px solid rgba(102, 126, 234, 0.1); background: linear-gradient(135deg, #fafafa, #ffffff);">
+                    <div class="chat-input-container" style="padding: 2rem;">
                         <!-- Image Preview Area -->
-                        <div id="image-preview" style="display: none; margin-bottom: 1rem; padding: 1rem; border: 2px dashed #667eea; border-radius: 10px; background: rgba(102, 126, 234, 0.05);">
+                        <div id="image-preview" class="image-preview" style="display: none; margin-bottom: 1rem; padding: 1rem; border: 2px dashed #667eea; border-radius: 10px;">
                             <div style="display: flex; align-items: center; gap: 1rem;">
                                 <img id="preview-image" style="max-width: 100px; max-height: 100px; border-radius: 8px; object-fit: cover;">
                                 <div style="flex: 1;">
@@ -369,7 +460,7 @@
 
                         <div style="display: flex; gap: 1rem; align-items: end;">
                             <div style="flex: 1; position: relative;">
-                                <textarea id="chat-input" placeholder="Tanyakan APAPUN... coding, matematika, translate, info kecamatan, atau upload gambar untuk dianalisis!" style="width: 100%; padding: 1.2rem; border: 2px solid #e5e7eb; border-radius: 15px; resize: vertical; min-height: 80px; max-height: 150px; font-family: inherit; line-height: 1.5; transition: all 0.3s ease; background: white;"></textarea>
+                                <textarea id="chat-input" class="chat-input" placeholder="Tanyakan APAPUN... coding, matematika, translate, info kecamatan, atau upload gambar untuk dianalisis!" style="width: 100%; padding: 1.2rem; border-radius: 15px; resize: vertical; min-height: 80px; max-height: 150px; font-family: inherit; line-height: 1.5; transition: all 0.3s ease;"></textarea>
                                 <div style="position: absolute; bottom: 8px; right: 12px; color: #9ca3af; font-size: 0.8rem;">
                                     Press Enter + Shift to send
                                 </div>
@@ -622,7 +713,7 @@
         </div>
     </footer>
 
-    <script src="https://dl.dropboxusercontent.com/scl/fi/nwfev2kfgin9ar7ijyecx/main.js?rlkey=c0b6bijev0e3w4joz54ebz0n7&st=ti4cs9ga"></script>
-    <script src="https://dl.dropboxusercontent.com/scl/fi/4s5kmonmy2op8f8sisdj9/ai.js?rlkey=9z0pv9old7tlrlz7ec8de81rv&st=dwjmp0xc"></script>
+    <script src="main.js"></script>
+    <script src="ai.js"></script>
 </body>
 </html>

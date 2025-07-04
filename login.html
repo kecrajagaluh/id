@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login - Website Resmi Kecamatan Rajagaluh">
+    <title>Login - Kecamatan Rajagaluh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #fbbf24;
+            --accent-color: #f59e0b;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --white: #ffffff;
+            --light-gray: #f9fafb;
+            --border-color: #e5e7eb;
+            --shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-heavy: 0 20px 25px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --font-primary: 'Poppins', sans-serif;
+        }
+        
+        /* Light Theme */
+        body[data-theme="light"] {
+            --bg-primary: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+            --bg-card: rgba(255, 255, 255, 0.95);
+            --bg-input: rgba(255, 255, 255, 0.9);
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --text-muted: #9ca3af;
+            --border-primary: rgba(0, 0, 0, 0.1);
+            --border-focus: #667eea;
+            --shadow-card: 0 20px 25px rgba(0, 0, 0, 0.1);
+            --shadow-input: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --particle-color: rgba(255, 255, 255, 0.8);
+            --bubble-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Dark Theme */
+        body[data-theme="dark"] {
+            --bg-primary: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #533483 100%);
+            --bg-card: rgba(15, 23, 42, 0.95);
+            --bg-input: rgba(30, 41, 59, 0.8);
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --border-primary: rgba(255, 255, 255, 0.1);
+            --border-focus: #60a5fa;
+            --shadow-card: 0 20px 25px rgba(0, 0, 0, 0.4);
+            --shadow-input: 0 4px 6px rgba(0, 0, 0, 0.2);
+            --particle-color: rgba(255, 255, 255, 0.6);
+            --bubble-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        body {
+            font-family: var(--font-primary);
+            background: var(--bg-primary);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            position: relative;
+            transition: var(--transition);
+            overflow: hidden;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Modern Particles & Bubbles Background */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            background: var(--particle-color);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0.8;
+        }
+        
+        .particle.small {
+            width: 2px;
+            height: 2px;
+        }
+        
+        .particle.medium {
+            width: 3px;
+            height: 3px;
+        }
+        
+        .particle.large {
+            width: 4px;
+            height: 4px;
+        }
+        
+        .bubble {
+            position: absolute;
+            background: var(--bubble-color);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0.6;
+            animation: bubbleFloat 8s infinite ease-in-out;
+        }
+        
+        .bubble.small {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .bubble.medium {
+            width: 35px;
+            height: 35px;
+        }
+        
+        .bubble.large {
+            width: 50px;
+            height: 50px;
+        }
+        
+        @keyframes bubbleFloat {
+            0%, 100% { 
+                transform: translateY(0px) scale(1);
+                opacity: 0.6;
+            }
+            50% { 
+                transform: translateY(-30px) scale(1.1);
+                opacity: 0.8;
+            }
+        }
+        
+        /* Theme Toggle */
+        .theme-toggle {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000;
+            background: var(--bg-card);
+            border: 2px solid var(--border-primary);
+            border-radius: 50px;
+            width: 60px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-input);
+            backdrop-filter: blur(10px);
+        }
+        
+        .theme-toggle::before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 26px;
+            height: 26px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            transition: var(--transition);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .theme-toggle i {
+            position: absolute;
+            font-size: 0.8rem;
+            transition: var(--transition);
+        }
+        
+        .theme-toggle .fa-sun {
+            left: 8px;
+            color: #fbbf24;
+            opacity: 1;
+        }
+        
+        .theme-toggle .fa-moon {
+            right: 8px;
+            color: #60a5fa;
+            opacity: 0;
+        }
+        
+        body[data-theme="dark"] .theme-toggle::before {
+            transform: translateX(28px);
+        }
+        
+        body[data-theme="dark"] .theme-toggle .fa-sun {
+            opacity: 0;
+        }
+        
+        body[data-theme="dark"] .theme-toggle .fa-moon {
+            opacity: 1;
+        }
+        
+        /* Main Container */
+        .login-container {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            border: 2px solid var(--border-primary);
+            border-radius: 2rem;
+            box-shadow: var(--shadow-card);
+            width: 100%;
+            max-width: 420px;
+            position: relative;
+            z-index: 10;
+            overflow: hidden;
+            animation: slideUp 0.6s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px) scale(0.95); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0) scale(1); 
+            }
+        }
+        
+        /* Header Section */
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.3);
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        
+        .brand-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        
+        .brand-subtitle {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+        
+        .beta-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            z-index: 3;
+        }
+        
+        /* Form Section */
+        .form-container {
+            padding: 2rem;
+        }
+        
+        .welcome-text {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .welcome-text h2 {
+            color: var(--text-primary);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .welcome-text p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 2px solid var(--border-primary);
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: var(--transition);
+            background: var(--bg-input);
+            color: var(--text-primary);
+            backdrop-filter: blur(10px);
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--border-focus);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            transform: translateY(-1px);
+        }
+        
+        .form-input::placeholder {
+            color: var(--text-muted);
+        }
+        
+        .login-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2, #9b59b6);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+        
+        .login-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .login-btn:hover::before {
+            left: 100%;
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .login-btn:active {
+            transform: translateY(0);
+        }
+        
+        .login-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .loading {
+            display: none;
+        }
+        
+        .loading i {
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .error-message {
+            color: #ef4444;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            display: none;
+            text-align: center;
+            padding: 0.8rem;
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            border-radius: 0.75rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .access-request {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .access-request a {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+        }
+        
+        .access-request a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            body {
+                padding: 0.5rem;
+            }
+            
+            .theme-toggle {
+                top: 0.5rem;
+                right: 0.5rem;
+                width: 50px;
+                height: 26px;
+            }
+            
+            .theme-toggle::before {
+                width: 20px;
+                height: 20px;
+            }
+            
+            body[data-theme="dark"] .theme-toggle::before {
+                transform: translateX(24px);
+            }
+            
+            .login-container {
+                max-width: 100%;
+                border-radius: 1.5rem;
+            }
+            
+            .logo {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
+            .brand-title {
+                font-size: 1.3rem;
+            }
+            
+            .brand-subtitle {
+                font-size: 0.9rem;
+            }
+            
+            .form-container {
+                padding: 1.5rem;
+            }
+            
+            .welcome-text h2 {
+                font-size: 1.2rem;
+            }
+            
+            .welcome-text p {
+                font-size: 0.9rem;
+            }
+            
+            .form-input {
+                padding: 0.9rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .login-btn {
+                padding: 0.9rem;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .login-container {
+                max-width: 480px;
+            }
+            
+            .logo {
+                width: 90px;
+                height: 90px;
+                font-size: 2.2rem;
+            }
+            
+            .brand-title {
+                font-size: 1.8rem;
+            }
+            
+            .brand-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .form-container {
+                padding: 2.5rem;
+            }
+            
+            .welcome-text h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body data-theme="light">
+    <div id="particles-js"></div>
+    
+    <div class="login-container">
+        <div class="theme-toggle" onclick="toggleTheme()">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+        </div>
+        
+        <div class="beta-badge">
+            <i class="fas fa-flask"></i> Beta
+        </div>
+        
+        <div class="form-container">
+            <div class="header">
+                <div class="logo">
+                    <img src="logo.svg" alt="Logo Kecamatan Rajagaluh">
+                </div>
+                <h1 class="brand-title">Kecamatan Rajagaluh</h1>
+                <p class="brand-subtitle">Sistem Informasi Pemerintahan</p>
+            </div>
+            
+            <div class="welcome-text">
+                <h2>Selamat Datang</h2>
+                <p>Masuk ke sistem untuk mengakses layanan digital</p>
+            </div>
+            
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <input type="text" class="form-input" id="username" placeholder="Username" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="password" class="form-input" id="password" placeholder="Password" required>
+                </div>
+                
+                <button type="submit" class="login-btn">
+                    <span class="btn-text">
+                        <i class="fas fa-sign-in-alt"></i> Masuk ke Sistem
+                    </span>
+                    <span class="loading">
+                        <i class="fas fa-spinner"></i> Memverifikasi...
+                    </span>
+                </button>
+                
+                <div class="error-message" id="errorMessage">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Username atau password salah. Silakan coba lagi.
+                </div>
+            </form>
+            
+            <div class="access-request">
+                <a href="#" onclick="requestAccess()">MEMINTA AKSES</a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Check if user is already logged in
+        const loginStatus = localStorage.getItem('loginStatus');
+        if (loginStatus === 'authenticated') {
+            window.location.href = 'index.html';
+        }
+        
+        // Theme toggle functionality
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                body.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+        
+        // Load saved theme
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.body.setAttribute('data-theme', savedTheme);
+        }
+        
+        // Create moving particles and bubbles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles-js');
+            const numParticles = 40;
+            const numBubbles = 15;
+            
+            // Create particles
+            for (let i = 0; i < numParticles; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Random size
+                const sizes = ['small', 'medium', 'large'];
+                particle.classList.add(sizes[Math.floor(Math.random() * sizes.length)]);
+                
+                // Random starting position
+                const startX = Math.random() * window.innerWidth;
+                const startY = Math.random() * window.innerHeight;
+                
+                particle.style.left = startX + 'px';
+                particle.style.top = startY + 'px';
+                
+                // Random movement speed and direction
+                const speedX = (Math.random() - 0.5) * 2;
+                const speedY = (Math.random() - 0.5) * 2;
+                
+                particle.speedX = speedX;
+                particle.speedY = speedY;
+                
+                particlesContainer.appendChild(particle);
+            }
+            
+            // Create bubbles
+            for (let i = 0; i < numBubbles; i++) {
+                const bubble = document.createElement('div');
+                bubble.className = 'bubble';
+                
+                // Random size
+                const sizes = ['small', 'medium', 'large'];
+                bubble.classList.add(sizes[Math.floor(Math.random() * sizes.length)]);
+                
+                // Random position
+                const startX = Math.random() * window.innerWidth;
+                const startY = Math.random() * window.innerHeight;
+                
+                bubble.style.left = startX + 'px';
+                bubble.style.top = startY + 'px';
+                
+                // Random animation delay
+                bubble.style.animationDelay = Math.random() * 8 + 's';
+                
+                particlesContainer.appendChild(bubble);
+            }
+            
+            // Animate particles
+            animateParticles();
+        }
+        
+        // Animate particles movement
+        function animateParticles() {
+            const particles = document.querySelectorAll('.particle');
+            
+            particles.forEach(particle => {
+                let x = parseFloat(particle.style.left);
+                let y = parseFloat(particle.style.top);
+                
+                x += particle.speedX;
+                y += particle.speedY;
+                
+                // Wrap around screen edges
+                if (x < 0) x = window.innerWidth;
+                if (x > window.innerWidth) x = 0;
+                if (y < 0) y = window.innerHeight;
+                if (y > window.innerHeight) y = 0;
+                
+                particle.style.left = x + 'px';
+                particle.style.top = y + 'px';
+            });
+            
+            requestAnimationFrame(animateParticles);
+        }
+        
+        // WhatsApp access request function
+        function requestAccess() {
+            const message = "Halo, saya ingin meminta akses ke sistem informasi Kecamatan Rajagaluh. Mohon bantuan untuk proses pendaftaran akun. Terima kasih.";
+            const phoneNumber = "628123456789"; // Replace with actual WhatsApp number
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, '_blank');
+        }
+        
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            loadTheme();
+            createParticles();
+            
+            // Add smooth entrance animation
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+        
+        // Form submission
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const btnText = document.querySelector('.btn-text');
+            const loading = document.querySelector('.loading');
+            const errorMessage = document.getElementById('errorMessage');
+            const submitBtn = document.querySelector('.login-btn');
+            
+            // Hide error message
+            errorMessage.style.display = 'none';
+            
+            // Show loading state
+            btnText.style.display = 'none';
+            loading.style.display = 'inline-block';
+            submitBtn.disabled = true;
+            
+            // Simulate login process
+            setTimeout(() => {
+                // Check credentials
+                const validCredentials = [
+                    { username: 'admin', password: 'admin123' },
+                    { username: 'demo', password: 'demo123' },
+                    { username: 'rajagaluh', password: 'rajagaluh123' },
+                    { username: 'raffael', password: '111' }
+                ];
+                
+                const isValid = validCredentials.some(cred => 
+                    cred.username === username && cred.password === password
+                );
+                
+                if (isValid) {
+                    // Successful login
+                    localStorage.setItem('loginStatus', 'authenticated');
+                    localStorage.setItem('loginUser', username);
+                    localStorage.setItem('loginTime', new Date().toISOString());
+                    
+                    // Show success state
+                    btnText.innerHTML = '<i class="fas fa-check"></i> Login Berhasil!';
+                    btnText.style.display = 'inline-block';
+                    loading.style.display = 'none';
+                    submitBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+                    
+                    // Redirect to homepage
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 1500);
+                } else {
+                    // Failed login
+                    btnText.style.display = 'inline-block';
+                    loading.style.display = 'none';
+                    submitBtn.disabled = false;
+                    errorMessage.style.display = 'block';
+                    
+                    // Shake animation
+                    submitBtn.style.animation = 'shake 0.5s ease-in-out';
+                    errorMessage.style.animation = 'shake 0.5s ease-in-out';
+                    
+                    setTimeout(() => {
+                        submitBtn.style.animation = '';
+                        errorMessage.style.animation = '';
+                    }, 500);
+                }
+            }, 1500);
+        });
+        
+        // Add shake animation keyframes
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                25% { transform: translateX(-5px); }
+                75% { transform: translateX(5px); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

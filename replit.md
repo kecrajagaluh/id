@@ -187,6 +187,38 @@ Changelog:
   * Added blue verified badge next to "AI SuperAssistant" text in header and chat
   * Implemented secure access control requiring token before AI chat usage
   * Added shake animation for invalid token attempts and success notifications
+- July 04, 2025. Added dark/light mode toggle and login authentication system:
+  * Implemented complete dark mode support with CSS variables for all UI elements
+  * Added theme toggle button in mobile navigation menu with local storage persistence
+  * Created comprehensive login system with beautiful beta testing design
+  * Added authentication checks to all HTML pages with automatic redirect to login
+  * Implemented login.html with gradient design, beta badge, and demo credentials
+  * Added logout functionality in mobile menu with confirmation dialog
+  * Login credentials: admin/admin123, demo/demo123, rajagaluh/rajagaluh123
+  * Enhanced mobile responsiveness for login page and dark mode toggle
+- July 04, 2025. Enhanced login page with particle background and improved theme system:
+  * Added animated particle background using particles.js library similar to provided design
+  * Implemented dedicated theme toggle button on login page with smooth transitions
+  * Enhanced dark/light mode styling with proper contrast and visibility
+  * Added comprehensive responsive design for desktop, tablet, and mobile devices
+  * Removed theme toggle notifications from all HTML files for cleaner UX
+  * Integrated glassmorphism effects with dynamic background gradients
+  * Added floating particle animations with interactive hover and click effects
+- July 04, 2025. Fixed mobile navigation and added desktop "Lainnya" menu grouping:
+  * Fixed mobile dropdown menus to be hidden by default instead of always showing
+  * Added click functionality for mobile dropdown toggles with smooth animations
+  * Fixed desktop menu overflow by repositioning right-side dropdowns
+  * Created "Lainnya" (Others) dropdown for desktop grouping PKL, Tentang, and Kontak
+  * Maintained individual menu items for mobile while grouping them for desktop
+  * Added outside click detection to automatically close mobile menus
+  * Enhanced mobile menu behavior with proper active states and arrow rotations
+- July 04, 2025. Enhanced AI Assistant with dark mode support and aesthetic logout dialog:
+  * Added comprehensive dark mode support for AI chat interface using CSS variables
+  * Updated chat container, messages, input fields to adapt to light/dark themes
+  * Created aesthetic logout confirmation dialog with animations and blur effects
+  * Replaced simple confirm dialog with modern modal featuring "YA" and "BATAL" buttons
+  * Added pulse animations, glassmorphism effects, and smooth transitions
+  * Implemented escape key and background click functionality for modal dismissal
 
 ## User Preferences
 

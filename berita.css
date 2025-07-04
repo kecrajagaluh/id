@@ -1,0 +1,31 @@
+/* Mobile-specific improvements for newsletter subscription */
+@media (max-width: 768px) {
+    .newsletter-subscription {
+        padding: 1rem 0.5rem !important;
+        margin: 1rem 0 !important;
+    }
+    
+    .newsletter-form {
+        max-width: 100% !important;
+        padding: 0 0.5rem;
+    }
+    
+    .newsletter-form input[type="email"] {
+        padding: 6px 10px !important;
+        font-size: 0.8rem !important;
+    }
+    
+    .newsletter-form button {
+        padding: 6px !important;
+        font-size: 0.8rem !important;
+    }
+    
+    .newsletter-subscription h3 {
+        font-size: 1rem !important;
+    }
+    
+    .newsletter-subscription p {
+        font-size: 0.8rem !important;
+        max-width: 100% !important;
+    }
+}

@@ -9,9 +9,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://dl.dropboxusercontent.com/scl/fi/nhme9azp8wqctkvg6mm9g/style.css?rlkey=bmo2a5uv9wm1d999b45ybxptt&st=ik7bqqs9">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <script>
+        // Check authentication status
+        const loginStatus = localStorage.getItem('loginStatus');
+        if (!loginStatus || loginStatus !== 'authenticated') {
+            window.location.href = 'login.html';
+        }
+    </script>
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -61,14 +68,26 @@
                     <li class="nav-item">
                         <a href="ai-assistant.html" class="nav-link">AI</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- Desktop: Grouped under Lainnya -->
+                    <li class="nav-item dropdown desktop-only">
+                        <a href="#" class="nav-link dropdown-toggle active">
+                            Lainnya <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="pkl.html">PKL</a></li>
+                            <li><a href="tentang.html">Tentang</a></li>
+                            <li><a href="kontak.html">Kontak</a></li>
+                        </ul>
+                    </li>
+                    <!-- Mobile: Individual items -->
+                    <li class="nav-item mobile-only">
                         <a href="pkl.html" class="nav-link">PKL</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item mobile-only">
                         <a href="tentang.html" class="nav-link">Tentang</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link active">Kontak</a>
+                    <li class="nav-item mobile-only">
+                        <a href="kontak.html" class="nav-link active">Kontak</a>
                     </li>
                 </ul>
             </nav>
@@ -464,7 +483,7 @@
         </div>
     </footer>
 
-    <script src="https://dl.dropboxusercontent.com/scl/fi/nwfev2kfgin9ar7ijyecx/main.js?rlkey=c0b6bijev0e3w4joz54ebz0n7&st=ti4cs9ga"></script>
-    <script src="https://dl.dropboxusercontent.com/scl/fi/l61ec51u88x71v7n5q8ui/kontak.js?rlkey=tuu1bvohj1vjscqwnql6f02de&st=ro9hw3qg"></script>
+    <script src="main.js"></script>
+    <script src="kontak.js"></script>
 </body>
 </html>
