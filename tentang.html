@@ -18,6 +18,10 @@
         if (!loginStatus || loginStatus !== 'authenticated') {
             window.location.href = 'login.html';
         }
+        
+        // Initialize theme
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
     </script>
     <!-- Header -->
     <header class="header">
@@ -383,7 +387,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 Kecamatan Rajagaluh. Seluruh hak cipta dilindungi undang-undang.</p>
+                <p>&copy; 2025 Kecamatan Rajagaluh. All rights reserved.</p>
             </div>
         </div>
     </footer>

@@ -38,6 +38,143 @@
     --shadow-heavy: 0 20px 25px rgba(0, 0, 0, 0.3);
 }
 
+/* Dark mode specific styles */
+[data-theme="dark"] body {
+    background-color: var(--white);
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .header {
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .nav-link {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .nav-link:hover,
+[data-theme="dark"] .nav-link.active {
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .dropdown-menu {
+    background-color: var(--light-gray);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .dropdown-menu a {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .dropdown-menu a:hover {
+    background-color: var(--border-color);
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .hero {
+    background-color: var(--white);
+}
+
+[data-theme="dark"] .hero h1,
+[data-theme="dark"] .hero p {
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .section {
+    background-color: var(--white);
+}
+
+[data-theme="dark"] .card,
+[data-theme="dark"] .service-card,
+[data-theme="dark"] .news-card {
+    background-color: var(--light-gray);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .card h3,
+[data-theme="dark"] .service-card h3,
+[data-theme="dark"] .news-card h3 {
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .card p,
+[data-theme="dark"] .service-card p,
+[data-theme="dark"] .news-card p {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .footer {
+    background-color: var(--light-gray);
+    border-top: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .footer h3 {
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .footer p,
+[data-theme="dark"] .footer-links a {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .footer-links a:hover {
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .form-input,
+[data-theme="dark"] .form-control {
+    background-color: var(--light-gray);
+    border-color: var(--border-color);
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .form-input::placeholder,
+[data-theme="dark"] .form-control::placeholder {
+    color: var(--text-light);
+}
+
+[data-theme="dark"] .modal-content {
+    background-color: var(--light-gray);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .modal-header,
+[data-theme="dark"] .modal-body,
+[data-theme="dark"] .modal-footer {
+    background-color: var(--light-gray);
+}
+
+[data-theme="dark"] .table {
+    background-color: var(--light-gray);
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .table th,
+[data-theme="dark"] .table td {
+    border-color: var(--border-color);
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--white);
+}
+
+[data-theme="dark"] .alert {
+    background-color: var(--light-gray);
+    border-color: var(--border-color);
+    color: var(--text-dark);
+}
+
 /* Base Styles */
 html {
     scroll-behavior: smooth;

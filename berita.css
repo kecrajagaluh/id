@@ -1,3 +1,20 @@
+/* Dark mode support for newsletter subscription */
+[data-theme="dark"] .newsletter-subscription {
+    background-color: var(--light-gray, #374151);
+    color: var(--text-dark, #f9fafb);
+}
+
+[data-theme="dark"] .newsletter-form input[type="email"] {
+    background-color: var(--light-gray, #374151);
+    color: var(--text-dark, #f9fafb);
+    border-color: var(--border-color, #4b5563);
+}
+
+[data-theme="dark"] .newsletter-form button {
+    background-color: var(--primary-color, #3b82f6);
+    color: var(--white, #f9fafb);
+}
+
 /* Mobile-specific improvements for newsletter subscription */
 @media (max-width: 768px) {
     .newsletter-subscription {

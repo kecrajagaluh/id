@@ -10,8 +10,84 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
     <style>
+        /* Dark Mode Variables for AI Assistant */
+        [data-theme="dark"] {
+            --bg-primary: #1f2937;
+            --bg-secondary: #374151;
+            --bg-chat: #2d3748;
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --border-color: #4b5563;
+            --accent-color: #3b82f6;
+        }
+        
+        /* Dark mode styles for AI Assistant */
+        [data-theme="dark"] .main-content {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+        }
+        
+        [data-theme="dark"] .chat-container {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+        }
+        
+        [data-theme="dark"] .message {
+            background: var(--bg-chat);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+        
+        [data-theme="dark"] .message.assistant {
+            background: var(--bg-secondary);
+        }
+        
+        [data-theme="dark"] #chat-input {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border-color: var(--border-color);
+        }
+        
+        [data-theme="dark"] #chat-input::placeholder {
+            color: var(--text-secondary);
+        }
+        
+        [data-theme="dark"] .code-block {
+            background: var(--bg-chat);
+        }
+        
+        [data-theme="dark"] .code-header {
+            background: var(--bg-primary);
+            color: var(--text-secondary);
+        }
+        
+        [data-theme="dark"] .capability-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+        }
+        
+        [data-theme="dark"] .capability-card h4 {
+            color: var(--text-primary);
+        }
+        
+        [data-theme="dark"] .capability-card p {
+            color: var(--text-secondary);
+        }
+        
+        [data-theme="dark"] .quick-questions button {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+        
+        [data-theme="dark"] .quick-questions button:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+        
         /* AI Assistant Animations and Styles */
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
@@ -119,6 +195,19 @@
             animation: slideInLeft 0.5s ease-out;
         }
         
+        /* Fix AI bubble colors for light/dark mode */
+        [data-theme="light"] .ai-message .message-content {
+            background: #ffffff !important;
+            color: #1f2937 !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        [data-theme="dark"] .ai-message .message-content {
+            background: #ffffff !important;
+            color: #1f2937 !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+        }
+        
         .typing-indicator {
             display: flex;
             gap: 4px;
@@ -138,74 +227,146 @@
         .typing-dot:nth-child(3) { animation-delay: 0.4s; }
         
         /* Dark mode support for AI chat */
-        .chat-container {
+        [data-theme="light"] .chat-container {
             background: var(--white) !important;
             border: 1px solid var(--border-color) !important;
             box-shadow: 0 20px 40px var(--shadow-heavy) !important;
         }
         
-        .token-auth-container {
-            background: linear-gradient(135deg, var(--light-gray), var(--border-color)) !important;
+        [data-theme="dark"] .chat-container {
+            background: #1f2937 !important;
+            border: 1px solid #4b5563 !important;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5) !important;
         }
         
-        .token-auth-card {
-            background: var(--white) !important;
-            box-shadow: 0 4px 15px var(--shadow-medium) !important;
+        [data-theme="light"] .token-auth-container {
+            background: linear-gradient(135deg, #f9fafb, #e5e7eb) !important;
         }
         
-        .token-auth-card h4 {
-            color: var(--text-dark) !important;
+        [data-theme="dark"] .token-auth-container {
+            background: linear-gradient(135deg, #374151, #4b5563) !important;
         }
         
-        .token-auth-card p {
-            color: var(--text-light) !important;
+        [data-theme="light"] .token-auth-card {
+            background: #ffffff !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
         }
         
-        .token-input {
-            border: 2px solid var(--border-color) !important;
-            background: var(--white) !important;
-            color: var(--text-dark) !important;
+        [data-theme="dark"] .token-auth-card {
+            background: #374151 !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
         }
         
-        .chat-messages-container {
-            background: linear-gradient(135deg, var(--light-gray) 0%, var(--border-color) 100%) !important;
+        [data-theme="light"] .token-auth-card h4 {
+            color: #1f2937 !important;
         }
         
-        .ai-message-card {
-            background: var(--white) !important;
-            box-shadow: 0 4px 15px var(--shadow-light) !important;
+        [data-theme="dark"] .token-auth-card h4 {
+            color: #f9fafb !important;
         }
         
-        .user-message-card {
+        [data-theme="light"] .token-auth-card p {
+            color: #6b7280 !important;
+        }
+        
+        [data-theme="dark"] .token-auth-card p {
+            color: #d1d5db !important;
+        }
+        
+        [data-theme="light"] .token-input {
+            border: 2px solid #e5e7eb !important;
+            background: #ffffff !important;
+            color: #1f2937 !important;
+        }
+        
+        [data-theme="dark"] .token-input {
+            border: 2px solid #4b5563 !important;
+            background: #374151 !important;
+            color: #f9fafb !important;
+        }
+        
+        [data-theme="light"] .chat-messages-container {
+            background: linear-gradient(135deg, #f9fafb 0%, #e5e7eb 100%) !important;
+        }
+        
+        [data-theme="dark"] .chat-messages-container {
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%) !important;
+        }
+        
+        /* AI message bubbles - white in both modes */
+        [data-theme="light"] .ai-message-card {
+            background: #ffffff !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        [data-theme="dark"] .ai-message-card {
+            background: #ffffff !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+        }
+        
+        [data-theme="light"] .user-message-card {
             background: var(--primary-color) !important;
         }
         
-        .ai-message-text {
-            color: var(--text-dark) !important;
+        [data-theme="dark"] .user-message-card {
+            background: var(--primary-color) !important;
         }
         
-        .user-message-text {
+        /* AI text - black in both modes */
+        [data-theme="light"] .ai-message-text {
+            color: #1f2937 !important;
+        }
+        
+        [data-theme="dark"] .ai-message-text {
+            color: #1f2937 !important;
+        }
+        
+        [data-theme="light"] .user-message-text {
             color: var(--white) !important;
         }
         
-        .chat-input-container {
-            background: var(--white) !important;
-            border-top: 1px solid var(--border-color) !important;
+        [data-theme="dark"] .user-message-text {
+            color: var(--white) !important;
         }
         
-        .chat-input {
-            background: var(--light-gray) !important;
-            border: 2px solid var(--border-color) !important;
-            color: var(--text-dark) !important;
+        [data-theme="light"] .chat-input-container {
+            background: #ffffff !important;
+            border-top: 1px solid #e5e7eb !important;
         }
         
-        .chat-input::placeholder {
-            color: var(--text-light) !important;
+        [data-theme="dark"] .chat-input-container {
+            background: #374151 !important;
+            border-top: 1px solid #4b5563 !important;
         }
         
-        .image-preview {
-            background: var(--light-gray) !important;
-            border: 2px solid var(--border-color) !important;
+        [data-theme="light"] .chat-input {
+            background: #f9fafb !important;
+            border: 2px solid #e5e7eb !important;
+            color: #1f2937 !important;
+        }
+        
+        [data-theme="dark"] .chat-input {
+            background: #1f2937 !important;
+            border: 2px solid #4b5563 !important;
+            color: #f9fafb !important;
+        }
+        
+        [data-theme="light"] .chat-input::placeholder {
+            color: #6b7280 !important;
+        }
+        
+        [data-theme="dark"] .chat-input::placeholder {
+            color: #d1d5db !important;
+        }
+        
+        [data-theme="light"] .image-preview {
+            background: #f9fafb !important;
+            border: 2px solid #e5e7eb !important;
+        }
+        
+        [data-theme="dark"] .image-preview {
+            background: #374151 !important;
+            border: 2px solid #4b5563 !important;
         }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
@@ -218,6 +379,10 @@
         if (!loginStatus || loginStatus !== 'authenticated') {
             window.location.href = 'login.html';
         }
+        
+        // Initialize theme
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
     </script>
     <!-- Header -->
     <header class="header">
@@ -708,7 +873,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 Kecamatan Rajagaluh. Seluruh hak cipta dilindungi undang-undang.</p>
+                <p>&copy; 2025 Kecamatan Rajagaluh. All rights reserved.</p>
             </div>
         </div>
     </footer>

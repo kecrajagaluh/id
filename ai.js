@@ -185,13 +185,13 @@ Berikan jawaban yang detail dan praktis untuk membantu warga Kecamatan Rajagaluh
                     <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #667eea, #764ba2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; flex-shrink: 0; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);">
                         <i class="fas fa-brain"></i>
                     </div>
-                    <div style="background: white; padding: 1.5rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); max-width: 80%; border-left: 4px solid #667eea; flex-grow: 1;">
+                    <div class="ai-message-card" style="padding: 1.5rem; border-radius: 15px; max-width: 80%; border-left: 4px solid #667eea; flex-grow: 1;">
                         <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
                             <span style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 0.2rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">AI SuperAssistant</span>
                             <span style="color: #10b981; font-size: 0.8rem;">●</span>
                             <span style="color: #6b7280; font-size: 0.8rem;">Online</span>
                         </div>
-                        <div class="message-content">
+                        <div class="ai-message-text">
                             ${this.formatMessage(message)}
                         </div>
                     </div>

@@ -803,6 +803,10 @@ function handleEventRegistration(event, eventId) {
 // Dark mode toggle functionality
 // Aesthetic logout confirmation dialog
 function showLogoutConfirmation() {
+    // Get current theme for proper modal styling
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    const isDark = currentTheme === 'dark';
+    
     // Create modal overlay
     const modal = document.createElement('div');
     modal.style.cssText = `
@@ -823,14 +827,15 @@ function showLogoutConfirmation() {
     
     modal.innerHTML = `
         <div class="logout-modal" style="
-            background: var(--white);
+            background: ${isDark ? '#374151' : '#ffffff'};
+            color: ${isDark ? '#f9fafb' : '#1f2937'};
             border-radius: 20px;
             padding: 2.5rem;
             max-width: 420px;
             width: 100%;
             text-align: center;
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
-            border: 1px solid var(--border-color);
+            border: 1px solid ${isDark ? '#4b5563' : '#e5e7eb'};
             transform: scale(0.8);
             animation: modalScale 0.3s ease-out forwards;
         ">
@@ -851,14 +856,14 @@ function showLogoutConfirmation() {
             </div>
             
             <h3 style="
-                color: var(--text-dark);
+                color: ${isDark ? '#f9fafb' : '#1f2937'};
                 margin: 0 0 1rem;
                 font-size: 1.5rem;
                 font-weight: 600;
             ">Konfirmasi Logout</h3>
             
             <p style="
-                color: var(--text-light);
+                color: ${isDark ? '#d1d5db' : '#6b7280'};
                 margin: 0 0 2rem;
                 line-height: 1.6;
                 font-size: 1rem;
@@ -869,10 +874,10 @@ function showLogoutConfirmation() {
                 gap: 1rem;
                 justify-content: center;
             ">
-                <button onclick="this.closest('[style*=\"position: fixed\"]').remove()" style="
-                    background: var(--light-gray);
-                    color: var(--text-dark);
-                    border: 2px solid var(--border-color);
+                <button id="cancelLogoutBtn" style="
+                    background: ${isDark ? '#4b5563' : '#f9fafb'};
+                    color: ${isDark ? '#f9fafb' : '#1f2937'};
+                    border: 2px solid ${isDark ? '#6b7280' : '#e5e7eb'};
                     padding: 0.8rem 2rem;
                     border-radius: 12px;
                     font-weight: 600;
@@ -880,7 +885,7 @@ function showLogoutConfirmation() {
                     transition: all 0.3s ease;
                     font-size: 1rem;
                 " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
-                    <i class="fas fa-times" style="margin-right: 0.5rem;"></i>Batal
+                    <i class="fas fa-times" style="margin-right: 0.5rem;"></i>BATAL
                 </button>
                 
                 <button onclick="performLogout()" style="
@@ -928,6 +933,33 @@ function showLogoutConfirmation() {
     document.head.appendChild(style);
     
     document.body.appendChild(modal);
+    
+    // Add event listeners for better button functionality
+    const cancelButton = modal.querySelector('#cancelLogoutBtn');
+    const confirmButton = modal.querySelector('#confirmLogoutBtn');
+    
+    if (cancelButton) {
+        cancelButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            modal.remove();
+            style.remove();
+            
+            // Hide any existing notifications
+            const notifications = document.querySelectorAll('.notification');
+            notifications.forEach(notification => {
+                notification.remove();
+            });
+        });
+    }
+    
+    if (confirmButton) {
+        confirmButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            performLogout();
+        });
+    }
     
     // Close on background click
     modal.addEventListener('click', function(e) {
@@ -1040,10 +1072,31 @@ function toggleTheme() {
         text.textContent = 'Mode Gelap';
     }
     
+    // Force immediate header theme update without needing scroll
+    const header = document.querySelector('.header');
+    if (header) {
+        // Remove any inline styles to let CSS take over
+        header.style.removeProperty('background');
+        header.style.removeProperty('background-color');
+        header.style.removeProperty('backdrop-filter');
+        
+        // Force a reflow to apply the new theme immediately
+        header.offsetHeight;
+        
+        // Apply proper background based on scroll position and theme
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > 100) {
+            if (newTheme === 'dark') {
+                header.style.background = 'rgba(31, 41, 55, 0.95)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+            header.style.backdropFilter = 'blur(10px)';
+        }
+    }
+    
     // Update header scroll effect with new theme
     if (typeof updateHeaderScroll === 'function') {
         updateHeaderScroll();
     }
-    
-    // Theme switched successfully
 }

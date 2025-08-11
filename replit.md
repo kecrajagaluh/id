@@ -204,6 +204,27 @@ Changelog:
   * Removed theme toggle notifications from all HTML files for cleaner UX
   * Integrated glassmorphism effects with dynamic background gradients
   * Added floating particle animations with interactive hover and click effects
+- July 06, 2025. Enhanced login security and updated copyright information:
+  * Added password visibility toggle button with eye icon to login.html password field
+  * Implemented togglePassword() JavaScript function for show/hide password functionality
+  * Updated copyright text across all 15 HTML files to "© 2025 Kecamatan Rajagaluh. All rights reserved."
+  * Enhanced password input with modern toggle styling and smooth transitions
+- July 06, 2025. Complete dark/light theme consistency across all HTML files:
+  * Added theme initialization script to all 14 HTML files for proper theme detection
+  * Enhanced style.css with comprehensive dark mode support for all UI components
+  * Added dark mode variables and styles for cards, navigation, forms, modals, and tables
+  * Enhanced AI Assistant embedded CSS with complete dark mode support for chat interface
+  * Added dark mode support to berita.css for newsletter subscription components
+  * Updated logout modal in main.js to properly support both light and dark themes
+  * Ensured all text colors have proper contrast in both themes for accessibility
+  * Fixed white elements appearing in dark mode and black text on dark backgrounds
+- July 06, 2025. Fixed AI chat colors, header theme switching, and logout modal button:
+  * Fixed AI chat bubbles to show dark bubbles with white text in dark mode (not white bubbles with white text)
+  * Enhanced AI Assistant CSS with proper [data-theme="dark"] and [data-theme="light"] selectors
+  * Fixed header theme switching to update immediately without requiring scroll
+  * Fixed "BATAL" button in logout modal with proper event listeners and click handling
+  * Added preventDefault and stopPropagation to ensure modal buttons work reliably
+  * Enhanced theme toggle function to force immediate header background color update
 - July 04, 2025. Fixed mobile navigation and added desktop "Lainnya" menu grouping:
   * Fixed mobile dropdown menus to be hidden by default instead of always showing
   * Added click functionality for mobile dropdown toggles with smooth animations
@@ -219,6 +240,15 @@ Changelog:
   * Replaced simple confirm dialog with modern modal featuring "YA" and "BATAL" buttons
   * Added pulse animations, glassmorphism effects, and smooth transitions
   * Implemented escape key and background click functionality for modal dismissal
+- July 06, 2025. Fixed AI chat colors, header theme switching, and logout modal button:
+  * Fixed AI chat bubbles to show white bubbles with black text in both light and dark modes
+  * Enhanced header theme switching to update immediately without requiring scroll
+  * Fixed "BATAL" button in logout modal with proper event listeners and click handling
+  * Added preventDefault and stopPropagation to ensure modal buttons work reliably
+  * Enhanced theme toggle function to force immediate header background color update
+  * Fixed AI chat bubble structure to prevent double bubble effect
+  * Improved laporan.js download function with proper notification system
+  * Created favicon.svg from logo.svg and added to all HTML files for better branding
 
 ## User Preferences
 

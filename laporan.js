@@ -7,7 +7,16 @@ function previewReport(reportId) {
 // Download report function
 function downloadReport(reportId) {
     showNotification(`Mengunduh laporan ${reportId}...`, 'success');
-    // In a real implementation, this would trigger the actual file download
+    
+    // Create a sample PDF download (placeholder implementation)
+    const link = document.createElement('a');
+    link.href = '#'; // In real implementation, this would be the actual file URL
+    link.download = `laporan_${reportId}.pdf`;
+    
+    // For demonstration, we'll show that it's trying to download
+    setTimeout(() => {
+        showNotification(`Laporan ${reportId} siap diunduh. Dalam implementasi nyata, file PDF akan terunduh.`, 'info');
+    }, 1000);
 }
 
 // Animate progress bars on page load

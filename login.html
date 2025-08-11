@@ -326,6 +326,23 @@
         
         .form-group {
             margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .password-toggle {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            transition: var(--transition);
+            z-index: 10;
+        }
+        
+        .password-toggle:hover {
+            color: var(--text-primary);
         }
         
         .form-input {
@@ -572,6 +589,7 @@
                 
                 <div class="form-group">
                     <input type="password" class="form-input" id="password" placeholder="Password" required>
+                    <i class="fas fa-eye password-toggle" id="passwordToggle" onclick="togglePassword()"></i>
                 </div>
                 
                 <button type="submit" class="login-btn">
@@ -600,6 +618,22 @@
         const loginStatus = localStorage.getItem('loginStatus');
         if (loginStatus === 'authenticated') {
             window.location.href = 'index.html';
+        }
+        
+        // Password toggle functionality
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const passwordToggle = document.getElementById('passwordToggle');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                passwordToggle.classList.remove('fa-eye');
+                passwordToggle.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                passwordToggle.classList.remove('fa-eye-slash');
+                passwordToggle.classList.add('fa-eye');
+            }
         }
         
         // Theme toggle functionality
