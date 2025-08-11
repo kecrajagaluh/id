@@ -90,14 +90,19 @@ LAYANAN UTAMA:
 7. Surat Keterangan Tidak Mampu - Syarat: FC KTP, FC KK, Surat Pengantar RT/RW, Biaya: Gratis
 
 DESA DI KECAMATAN RAJAGALUH:
-1. Rajagaluh Lor (Desa Induk) - Kode Pos: 45472
-2. Rajagaluh Kidul - Kode Pos: 45472
-3. Sukamulya - Kode Pos: 45472
-4. Cikancana - Kode Pos: 45472
-5. Dawuan Barat - Kode Pos: 45472
-6. Dawuan Timur - Kode Pos: 45472
-7. Sindangkasih - Kode Pos: 45472
-8. Bangbayang - Kode Pos: 45472
+1. Babakankareo – Kode Pos: 45472
+2. Cipinang – Kode Pos: 45472
+3. Cisetu – Kode Pos: 45472
+4. Kumbung – Kode Pos: 45472
+5. Pajajar – Kode Pos: 45472
+6. Payung – Kode Pos: 45472
+7. Rajagaluh – Kode Pos: 45472
+8. Rajagaluh Kidul – Kode Pos: 45472
+9. Rajagaluh Lor – Kode Pos: 45472
+10. Sadomas – Kode Pos: 45472
+11. Sindangpano – Kode Pos: 45472
+12. Singawada – Kode Pos: 45472
+13. Teja – Kode Pos: 45472
 
 KEMAMPUAN ANDA:
 1. Programming & Coding (Python, JavaScript, HTML, CSS, dll)
