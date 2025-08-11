@@ -77,8 +77,8 @@ INFORMASI KECAMATAN RAJAGALUH:
 - Jam Kerja: Senin-Jumat 08:00-15:00 WIB
 - Telepon: (0233) 281234
 - Email: kecrajagaluh@majalengkakab.go.id
-- Camat: Drs. H. Ahmad Sutisna, M.Si
-- Sekretaris Camat: Hj. Siti Nurhasanah, S.Sos
+- Camat: Bani Fadilah Ranandar S.STP., M.AP.
+- Sekretaris Camat: -
 
 LAYANAN UTAMA:
 1. KTP (Kartu Tanda Penduduk) - Syarat: FC KK, Surat Pengantar RT/RW, Pas Foto 3x4, Biaya: Gratis
