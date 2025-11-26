@@ -1,7 +1,7 @@
 class AIAssistant {
     constructor() {
         this.apiKey = 'AIzaSyBRgRY0c6nEcLIN6C7SlOhhY5DBstBqkvw';
-        this.apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
+        this.apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent';
         this.currentImage = null;
         this.setupEventListeners();
         this.addWelcomeMessage();
